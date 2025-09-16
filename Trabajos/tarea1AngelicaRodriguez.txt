@@ -1,0 +1,143 @@
+﻿Un letrero de color negro
+
+Descripción generada automáticamente con confianza baja 
+
+
+
+IIl Cuatrimestre 2025
+
+
+Tarea 1
+
+
+María Angélica Rodríguez Coto
+
+
+Universidad CENFOTEC
+
+
+Portafolio Profesional
+
+
+Fransisco Jose Jimenez Bonilla
+
+
+19 Septiembre 2025
+________________
+Desarrollo
+1. ¿Qué es un portafolio web?
+Un portafolio web es una recopilación de proyectos, habilidades, cualidades, entre otros. Este portafolio se presenta de forma digital ya sea mediante un sitio web propio o en una aplicación para aplicar a puestos de trabajo.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. ¿Cuál carrera lleva en la Universidad Cenfotec?
+En la Universidad Cenfotec estoy llevando la carrera de Ingeniería en Software.  
+
+
+
+
+
+
+
+
+3. ¿Cuál es el punto fuerte a nivel técnico que puede aprovechar de acuerdo a su perfil profesional?
+Un punto fuerte a nivel técnico que puedo aprovechar es el dominio de desarrollar aplicaciones full stack. Tengo experiencia trabajando tanto en el frontend como en el backend. También tengo conocimientos de bases de datos, pruebas automatizadas, control de versiones, patrones de diseño, diferentes arquitecturas y diferentes herramientas.
+  
+________________
+
+
+
+4. ¿Cuál es el punto fuerte a nivel humano que puede aprovechar de acuerdo a su perfil profesional?
+Un punto fuerte a nivel técnico que puedo aprovechar es mi capacidad de adaptación a diferentes tecnologías. Esto me permite estar actualizada con las nuevas herramientas y buenas prácticas para asegurar una solución más eficiente.
+  
+________________
+
+
+
+5. ¿Cuáles son las herramientas tecnológicas que puede usar en el desarrollo del portafolio web?
+Algunas de las herramientas tecnológicas que puedo utilizar para el desarrollo de un portafolio web incluyen, en el área de frontend, HTML, CSS, JavaScript y el framework React; en el backend, Python, Java, C#, Node.js, Express, JavaScript, TypeScript, JWT y FastAPI; para la gestión de bases de datos, MySQL, SQL Server, PostgreSQL, MongoDB y BitBucket; en control de versiones, Git y GitHub; y para la gestión y despliegue de aplicaciones, Docker.
+  
+
+________________
+
+
+6. ¿Qué tipo de portafolio web le gustaría desarrollar (laboral o freelance)?
+El tipo de portafolio web que me gustaría desarrollar es de tipo laboral.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7. ¿Qué estilo de sitio web va a desarrollar en el portafolio web (one page o marcos)?
+El estilo de sitio web que voy a desarrollar en el portafolio web es de tipo one page  
+.
+
+
+________________
+
+
+8. ¿Escribir su autobiografía? Debe tener 5 renglones.
+Mi nombre es Maria Angelica Rodriguez Coto y desde pequeña he sido una persona curiosa y con mucho interés por aprender cosas nuevas, especialmente en áreas relacionadas a la creatividad. Durante mi infancia me encantaba buscar formas de expresar mis ideas mediante el arte y encontrar soluciones a problemas costos,
+Actualmente me encuentro construyendo mi carrera profesional, expandiendo mis conocimientos mediante la universidad y el trabajo para aprender nuevas herramientas y conseguir experiencia laboral. Mi objetivo es seguir creciendo en el área de la tecnología y tener un portafolio profesional llamativo para los reclutadores.
+  
+
+________________
+
+
+9. ¿Escribir la biografía de un personaje favorito?
+Pocoyó es un niño de 4 años y el protagonista de la serie animada Pocoyó. Le gusta jugar, construir, pintar, explorar y aprender. Sus amigos son Pato, Elly, Nina y Loula. Juntos disfrutan vivir nuevas aventuras y explorar su mundo con una actitud positiva y curiosa.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________
+
+
+10. ¿Citar los proyectos web que puede incorporar en la galería del portafolio al final del curso?
+En la galería de mi portafolio voy a incorporar varios proyectos desarrollados en  la universidad, incluyendo Proyecto 1, Proyecto 2, Proyecto de Programación con Patrones y Proyecto de Programación Orientada a Objetos.
+  
+
+________________
+
+
+Conclusión
+Respondiendo las preguntas de este cuestionario, estoy aprendiendo cómo mejorar mi portafolio profesional, así como identificar las tecnologías que he utilizado y las cualidades que poseo para enriquecerlo. Las preguntas ayudan a desarrollar habilidades de planificación, presentación y comunicación visual, demostrando que un portafolio personal no se trata solo de llenar información, sino de organizar y presentar conocimientos clave de manera clara y profesional. Esto garantiza que el portafolio llame la atención de los reclutadores al momento de postular a un trabajo.
+________________
+Referencias Web
+1. Universidad Europea
+Universidad Europea. (27 de Junio del 2025).¿Cómo hacer un portafolio digital? Paso a paso. Creative Campus. Recuperado el 12 de septiembre de 2025, de https://creativecampus.universidadeuropea.com/blog/portafolio-digital/#que-es-ptf
+
+
+2. Fandom
+Fandom. (s.f.).Pocoyó. Pocoyo Wiki. Recuperado el 12 de septiembre de 2025, de
+https://pocoyo.fandom.com/es/wiki/Pocoy%C3%B3
