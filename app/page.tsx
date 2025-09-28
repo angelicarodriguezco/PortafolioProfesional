@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import LogotipoSection from "@/components/seccion-logotipo"
 import HeroSection from "@/components/seccion-hero"
 import AboutSection from "@/components/seccion-acerca-de"
 import SkillsSection from "@/components/seccion-habilidades"
@@ -26,7 +27,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "about", "skills", "gallery", "contact"]
+      const sections = ["logotipo", "hero", "about", "skills", "gallery", "contact"]
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -60,6 +61,7 @@ export default function Portfolio() {
             className="relative"
           >
             <Navigation currentSection={currentSection} />
+            <LogotipoSection />
             <HeroSection />
             <AboutSection />
             <SkillsSection />

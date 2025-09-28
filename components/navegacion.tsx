@@ -17,7 +17,8 @@ export default function Navigation({ currentSection }: NavigationProps) {
   }
 
   const navItems = [
-    { id: "hero", label: "Inicio" },
+    { id: "logotipo", label: "Inicio" },
+    { id: "hero", label: "Presentación" },
     { id: "about", label: "Acerca de" },
     { id: "skills", label: "Habilidades" },
     { id: "gallery", label: "Proyectos" },
@@ -57,7 +58,7 @@ export default function Navigation({ currentSection }: NavigationProps) {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
             }}
-            onClick={() => scrollToSection("hero")}
+            onClick={() => scrollToSection("logotipo")}
           >
             Portafolio
           </motion.div>
