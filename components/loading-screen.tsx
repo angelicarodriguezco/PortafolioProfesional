@@ -8,7 +8,7 @@ export default function LoadingScreen() {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-background"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-white"
     >
       <div className="text-center">
         <motion.div
@@ -17,21 +17,21 @@ export default function LoadingScreen() {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-accent animate-gradient" />
-          <h1 className="text-2xl font-bold text-foreground">Portfolio</h1>
+          <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 animate-gradient" />
+          <h1 className="text-2xl font-bold text-gray-800">Portfolio</h1>
         </motion.div>
 
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
           transition={{ duration: 2, ease: "easeInOut" }}
-          className="w-64 h-1 mx-auto bg-muted rounded-full overflow-hidden"
+          className="w-64 h-1 mx-auto bg-gray-200 rounded-full overflow-hidden"
         >
           <motion.div
             initial={{ x: "-100%" }}
             animate={{ x: "100%" }}
             transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-            className="h-full w-1/3 bg-gradient-to-r from-primary to-accent"
+            className="h-full w-1/3 bg-gradient-to-r from-purple-600 to-pink-500"
           />
         </motion.div>
 
@@ -39,7 +39,7 @@ export default function LoadingScreen() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
-          className="mt-4 text-muted-foreground"
+          className="mt-4 text-gray-600"
         >
           Crafting digital experiences...
         </motion.p>

@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import Image from "next/image"
 
-export default function LogotipoSection() {
+export default function LogotipoPage() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -51,9 +51,9 @@ export default function LogotipoSection() {
 
   return (
     <section 
-      id="logotipo" 
       className="min-h-screen bg-white flex items-center justify-center relative overflow-hidden"
     >
+      {/* Elementos decorativos de fondo */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl"
@@ -96,9 +96,10 @@ export default function LogotipoSection() {
         animate={isInView ? "visible" : "hidden"}
         className="relative z-10 max-w-4xl mx-auto px-6 text-center"
       >
+        {/* Logotipo */}
         <motion.div 
           variants={itemVariants}
-          className="mb-12"
+          className="mb-6"
         >
           <motion.div 
             variants={floatingVariants} 
@@ -106,41 +107,23 @@ export default function LogotipoSection() {
             className="relative inline-block"
           >
             <motion.div
-              className="relative w-32 h-32 lg:w-40 lg:h-40 mx-auto"
+              className="relative w-64 h-64 lg:w-80 lg:h-80 mx-auto"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
-              <motion.div
-                className="absolute -inset-4 rounded-full blur-xl"
-                style={{ 
-                  background: `linear-gradient(45deg, ${vibrantColors.purple}30, ${vibrantColors.coral}30, ${vibrantColors.orange}30)` 
-                }}
-                animate={{
-                  rotate: [0, 360],
-                  scale: [1, 1.1, 1],
-                  opacity: [0.4, 0.7, 0.4],
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "easeInOut",
-                }}
+              <Image
+                src="/Logotipo.png"
+                alt="Logotipo Portafolio Profesional"
+                width={320}
+                height={320}
+                className="w-full h-full object-contain object-center scale-150"
+                priority
               />
-              
-              <div className="relative w-full h-full rounded-full p-2 bg-white shadow-2xl">
-                <Image
-                  src="/Logotipo.png"
-                  alt="Logotipo Portafolio Profesional"
-                  width={160}
-                  height={160}
-                  className="w-full h-full object-contain rounded-full"
-                  priority
-                />
-              </div>
             </motion.div>
           </motion.div>
         </motion.div>
 
+        {/* Título principal */}
         <motion.h1
           variants={itemVariants}
           className="text-5xl lg:text-7xl font-bold text-balance leading-tight mb-8"
@@ -162,6 +145,7 @@ export default function LogotipoSection() {
           Portafolio Profesional
         </motion.h1>
 
+        {/* Subtítulo */}
         <motion.p
           variants={itemVariants}
           className="text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto"
@@ -170,6 +154,7 @@ export default function LogotipoSection() {
           Desarrollando soluciones digitales innovadoras con pasión y creatividad
         </motion.p>
 
+        {/* Elementos decorativos adicionales */}
         <motion.div
           variants={itemVariants}
           className="mt-16 flex justify-center gap-8"
