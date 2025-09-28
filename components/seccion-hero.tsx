@@ -1,0 +1,386 @@
+"use client"
+
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useEffect, useState, useRef } from "react"
+import { Button } from "@/components/ui/button"
+import { Download, Github, Linkedin, Mail } from "lucide-react"
+
+export default function HeroSection() {
+  const [displayText, setDisplayText] = useState("")
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const fullText = "Desarrollador Full Stack & Diseñador UI/UX"
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  const vibrantColors = {
+    purple: "#3e196e",
+    coral: "#d46c76",
+    orange: "#ffc07c"
+  }
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  })
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -200])
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+
+  useEffect(() => {
+    if (currentIndex < fullText.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText((prev) => prev + fullText[currentIndex])
+        setCurrentIndex((prev) => prev + 1)
+      }, 100)
+      return () => clearTimeout(timeout)
+    }
+  }, [currentIndex, fullText])
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { y: 100, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring" as const,
+        stiffness: 100,
+        damping: 12,
+      },
+    },
+  }
+
+  const floatingVariants = {
+    animate: {
+      y: [-10, 10, -10],
+      transition: {
+        duration: 4,
+        repeat: Number.POSITIVE_INFINITY,
+        ease: "easeInOut" as const,
+      },
+    },
+  }
+
+  return (
+    <section
+      id="hero"
+      ref={containerRef}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
+    >
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          className="absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl"
+          style={{ 
+            background: `linear-gradient(45deg, ${vibrantColors.purple}15, ${vibrantColors.coral}15)` 
+          }}
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.4, 0.6, 0.4],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl"
+          style={{ 
+            background: `linear-gradient(45deg, ${vibrantColors.coral}15, ${vibrantColors.orange}15)` 
+          }}
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.3, 0.5, 0.3],
+            rotate: [360, 180, 0],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl"
+          style={{ 
+            background: `linear-gradient(45deg, ${vibrantColors.purple}10, ${vibrantColors.coral}10, ${vibrantColors.orange}10)` 
+          }}
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.2, 0.4, 0.2],
+            rotate: [0, 90, 180, 270, 360],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+
+      <motion.div style={{ y, opacity }} className="relative z-10 max-w-7xl mx-auto px-6">
+        <motion.div variants={containerVariants} initial="hidden" animate="visible">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
+            
+            <motion.div 
+              variants={itemVariants} 
+              className="flex-shrink-0 order-1 lg:order-1"
+            >
+              <motion.div 
+                variants={floatingVariants} 
+                animate="animate" 
+                className="relative"
+              >
+                <div className="relative w-48 h-48 lg:w-56 lg:h-56">
+                  <motion.div
+                    className="absolute -inset-4 rounded-full blur-xl"
+                    style={{ 
+                      background: `linear-gradient(45deg, ${vibrantColors.purple}40, ${vibrantColors.coral}40, ${vibrantColors.orange}40)` 
+                    }}
+                    animate={{
+                      rotate: [0, 360],
+                      scale: [1, 1.1, 1],
+                      opacity: [0.3, 0.6, 0.3],
+                    }}
+                    transition={{
+                      duration: 8,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "easeInOut",
+                    }}
+                  />
+                  
+                  <motion.div
+                    className="relative w-full h-full rounded-full p-1"
+                    style={{ 
+                      background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral}, ${vibrantColors.orange})` 
+                    }}
+                    animate={{
+                      rotate: [0, 360],
+                    }}
+                    transition={{
+                      duration: 12,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "linear",
+                    }}
+                  >
+                    <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
+                    </div>
+                  </motion.div>
+                  
+                  <motion.div
+                    className="absolute -top-2 -right-2 w-6 h-6 rounded-full"
+                    style={{ 
+                      background: `linear-gradient(45deg, ${vibrantColors.purple}, ${vibrantColors.coral})` 
+                    }}
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0.7, 1, 0.7],
+                      rotate: [0, 180, 360],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "easeInOut",
+                    }}
+                  />
+                  <motion.div
+                    className="absolute -bottom-2 -left-2 w-4 h-4 rounded-full"
+                    style={{ 
+                      background: `linear-gradient(45deg, ${vibrantColors.orange}, ${vibrantColors.coral})` 
+                    }}
+                    animate={{
+                      scale: [1, 1.3, 1],
+                      opacity: [0.5, 0.9, 0.5],
+                      rotate: [360, 180, 0],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "easeInOut",
+                      delay: 1,
+                    }}
+                  />
+                </div>
+              </motion.div>
+            </motion.div>
+
+            <motion.div 
+              variants={itemVariants} 
+              className="flex-1 text-center lg:text-left order-2 lg:order-2 space-y-6"
+            >
+              <motion.h1
+                className="text-5xl lg:text-7xl font-bold text-balance leading-tight"
+                style={{ 
+                  background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.orange})`,
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 10,
+                  delay: 0.5,
+                }}
+              >
+                Nombre
+              </motion.h1>
+
+              <motion.div
+                className="text-xl lg:text-2xl font-medium h-8 lg:h-10 flex items-center justify-center lg:justify-start"
+                variants={itemVariants}
+              >
+                <span 
+                  style={{ 
+                    background: `linear-gradient(135deg, ${vibrantColors.coral}, ${vibrantColors.orange})`,
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}
+                >
+                  {displayText}
+                </span>
+                <motion.span
+                  className="ml-1"
+                  style={{ 
+                    background: `linear-gradient(135deg, ${vibrantColors.coral}, ${vibrantColors.orange})`,
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY }}
+                >
+                  |
+                </motion.span>
+              </motion.div>
+
+              <motion.p
+                className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0"
+                style={{ color: vibrantColors.purple }}
+                variants={itemVariants}
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+              </motion.p>
+
+              <motion.div 
+                variants={itemVariants}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button 
+                    size="lg" 
+                    className="group relative overflow-hidden text-white border-0 px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-xl"
+                    style={{ 
+                      background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})` 
+                    }}
+                  >
+                    <span className="relative z-10 flex items-center gap-2">
+                      <Download className="w-5 h-5" />
+                      Descargar CV
+                    </span>
+                    <motion.div
+                      className="absolute inset-0"
+                      style={{ 
+                        background: `linear-gradient(135deg, ${vibrantColors.coral}, ${vibrantColors.orange})` 
+                      }}
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </Button>
+                </motion.div>
+                
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="px-8 py-3 text-lg font-semibold rounded-full border-2 transition-all duration-300"
+                    style={{ 
+                      borderColor: vibrantColors.coral,
+                      color: vibrantColors.purple,
+                      backgroundColor: `${vibrantColors.coral}15`
+                    }}
+                  >
+                    Ver Portafolio
+                  </Button>
+                </motion.div>
+              </motion.div>
+
+              <motion.div 
+                variants={itemVariants}
+                className="flex justify-center lg:justify-start gap-4 pt-4"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Button
+                    variant="ghost"
+                    size="lg"
+                    className="w-12 h-12 rounded-full transition-all duration-300"
+                    style={{ 
+                      background: `linear-gradient(135deg, ${vibrantColors.purple}20, ${vibrantColors.coral}20)`,
+                      color: vibrantColors.purple
+                    }}
+                  >
+                    <Github className="w-6 h-6" />
+                  </Button>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Button
+                    variant="ghost"
+                    size="lg"
+                    className="w-12 h-12 rounded-full transition-all duration-300"
+                    style={{ 
+                      background: `linear-gradient(135deg, ${vibrantColors.coral}20, ${vibrantColors.orange}20)`,
+                      color: vibrantColors.coral
+                    }}
+                  >
+                    <Linkedin className="w-6 h-6" />
+                  </Button>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Button
+                    variant="ghost"
+                    size="lg"
+                    className="w-12 h-12 rounded-full transition-all duration-300"
+                    style={{ 
+                      background: `linear-gradient(135deg, ${vibrantColors.orange}20, ${vibrantColors.purple}20)`,
+                      color: vibrantColors.orange
+                    }}
+                  >
+                    <Mail className="w-6 h-6" />
+                  </Button>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </motion.div>
+      </motion.div>
+    </section>
+  )
+}
