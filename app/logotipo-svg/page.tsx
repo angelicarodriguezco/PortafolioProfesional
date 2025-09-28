@@ -2,9 +2,9 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import Image from "next/image"
+import LogotipoSVGComponent from "@/components/logotipo-svg-component"
 
-export default function LogotipoPage() {
+export default function LogotipoSVGPage() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -38,21 +38,11 @@ export default function LogotipoPage() {
     },
   }
 
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      transition: {
-        duration: 4,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: "easeInOut" as const,
-      },
-    },
-  }
-
   return (
     <section 
       className="min-h-screen bg-white flex items-center justify-center relative overflow-hidden"
     >
+      {/* Elementos decorativos de fondo */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl"
@@ -95,32 +85,21 @@ export default function LogotipoPage() {
         animate={isInView ? "visible" : "hidden"}
         className="relative z-10 max-w-4xl mx-auto px-6 text-center"
       >
+        {/* Logotipo SVG */}
         <motion.div 
           variants={itemVariants}
           className="mb-6"
         >
-          <motion.div 
-            variants={floatingVariants} 
-            animate="animate" 
-            className="relative inline-block"
+          <motion.div
+            className="relative w-64 h-64 lg:w-80 lg:h-80 mx-auto"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
-            <motion.div
-              className="relative w-64 h-64 lg:w-80 lg:h-80 mx-auto"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            >
-              <Image
-                src="/LogotipoSVG.svg"
-                alt="Logotipo Portafolio Profesional"
-                width={320}
-                height={320}
-                className="w-full h-full object-contain object-center"
-                priority
-              />
-            </motion.div>
+            <LogotipoSVGComponent />
           </motion.div>
         </motion.div>
 
+        {/* Título principal */}
         <motion.h1
           variants={itemVariants}
           className="text-5xl lg:text-7xl font-bold text-balance leading-tight mb-8"
@@ -142,50 +121,14 @@ export default function LogotipoPage() {
           Portafolio Profesional
         </motion.h1>
 
-        <motion.div
+        {/* Subtítulo */}
+        <motion.p
           variants={itemVariants}
-          className="mt-16 flex justify-center gap-8"
+          className="text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto"
+          style={{ color: vibrantColors.purple }}
         >
-          <motion.div
-            className="w-4 h-4 rounded-full"
-            style={{ backgroundColor: vibrantColors.purple }}
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.5, 1, 0.5],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Number.POSITIVE_INFINITY,
-              delay: 0,
-            }}
-          />
-          <motion.div
-            className="w-4 h-4 rounded-full"
-            style={{ backgroundColor: vibrantColors.coral }}
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.5, 1, 0.5],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Number.POSITIVE_INFINITY,
-              delay: 0.5,
-            }}
-          />
-          <motion.div
-            className="w-4 h-4 rounded-full"
-            style={{ backgroundColor: vibrantColors.orange }}
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.5, 1, 0.5],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Number.POSITIVE_INFINITY,
-              delay: 1,
-            }}
-          />
-        </motion.div>
+          Desarrollando soluciones digitales innovadoras con pasión y creatividad
+        </motion.p>
       </motion.div>
     </section>
   )
