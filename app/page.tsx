@@ -9,7 +9,6 @@ import GallerySection from "@/components/seccion-galeria"
 import ContactSection from "@/components/seccion-contacto"
 import Navigation from "@/components/navegacion"
 import ScrollToTop from "@/components/scroll-to-top"
-import CustomCursor from "@/components/custom-cursor"
 import LoadingScreen from "@/components/loading-screen"
 
 export default function Portfolio() {
@@ -47,7 +46,6 @@ export default function Portfolio() {
 
   return (
     <>
-      <CustomCursor />
       <AnimatePresence mode="wait">
         {isLoading ? (
           <LoadingScreen key="loading" />
