@@ -15,7 +15,6 @@ interface Project {
   image: string
   category: string
   technologies: string[]
-  liveUrl: string
   githubUrl: string
   featured: boolean
 }
@@ -23,7 +22,6 @@ interface Project {
 export default function GallerySection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [selectedCategory, setSelectedCategory] = useState("All")
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
   const vibrantColors = {
@@ -35,88 +33,53 @@ export default function GallerySection() {
   const projects: Project[] = [
     {
       id: "1",
-      title: "Plataforma E-Commerce",
-      description: "Solución de comercio electrónico moderna con características avanzadas",
+      title: "Pokémon Fight",
+      description: "Sistema de Batallas Pokémon",
       longDescription:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      image: "/placeholder.svg?key=ecommerce",
+        "Aplicación web de batallas Pokémon donde los usuarios pueden crear equipos de Pokémon, desafiar a amigos y participar en combates estratégicos. El sistema incluye gestión de usuarios, creación de equipos personalizados, sistema de batallas por turnos, historial de partidas, tabla de liderazgo y sistema de amigos. Los usuarios pueden registrarse, crear múltiples equipos con diferentes Pokémon, desafiar a otros jugadores y seguir su progreso a través de estadísticas detalladas.",
+      image: "/placeholder.svg?key=dashboard",
       category: "Aplicación Web",
-      technologies: ["Next.js", "TypeScript", "Stripe", "Prisma", "Tailwind"],
-      liveUrl: "#",
-      githubUrl: "#",
+      technologies: ["Node.js", "Express.js", "MongoDB", "HTML", "CSS", "JavaScript"],
+      githubUrl: "https://github.com/ECF2001/Pokemon-Fight",
       featured: true,
     },
     {
       id: "2",
-      title: "Dashboard de Gestión de Tareas",
-      description: "Herramienta colaborativa de gestión de proyectos",
+      title: "Wealthify",
+      description: "Plataforma de Inversión en Bolsa de Valores",
       longDescription:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      image: "/placeholder.svg?key=dashboard",
+        "Wealthify es una plataforma web integral de inversión en bolsa de valores que conecta asesores financieros con inversionistas. La aplicación permite a los usuarios registrarse como asesores o clientes, gestionar portafolios de inversión, visualizar datos de mercado en tiempo real, realizar compras y ventas de acciones con PayPal, y generar reportes financieros detallados.",
+      image: "/placeholder.svg?key=mobile",
       category: "Aplicación Web",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Material-UI"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true,
+      technologies: ["C#", "ASP.NET", "Entity Framework", "SQL Server", "HTML", "CSS", "JavaScript", "Cloudinary", "Yahoo Finance API", "PayPal API"],
+      githubUrl: "https://github.com/angelicarodriguezco/Proyecto2Grupo3",
+      featured: false,
     },
     {
       id: "3",
-      title: "App de Banca Móvil",
-      description: "Diseño de interfaz de banca móvil segura",
+      title: "Flickr Favorites",
+      description: "Buscador y gestor de imágenes favoritas de Flickr",
       longDescription:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      image: "/placeholder.svg?key=mobile",
-      category: "UI/UX",
-      technologies: ["Figma", "Principle", "Adobe XD", "InVision", "Sketch"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false,
-    },
-    {
-      id: "4",
-      title: "Generador de Contenido IA",
-      description: "Plataforma de creación de contenido impulsada por IA",
-      longDescription:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+        "FlickrFavorites es una aplicación web que permite a los usuarios buscar imágenes de Flickr, marcarlas como favoritas y gestionar su colección personal de imágenes favoritas. La aplicación incluye una galería de búsqueda de imágenes, y un panel de gestión de favoritos donde los usuarios pueden editar títulos de sus imágenes guardadas.",
       image: "/placeholder.svg?key=ai",
       category: "Aplicación Web",
-      technologies: ["Python", "FastAPI", "React", "OpenAI", "PostgreSQL"],
-      liveUrl: "#",
-      githubUrl: "#",
+      technologies: ["React", "Node.js", "MongoDB", "Jest", "Flickr API"],
+      githubUrl: "https://github.com/angelicarodriguezco/FlickrFavorites",
       featured: true,
     },
     {
-      id: "5",
-      title: "Sistema de Identidad de Marca",
-      description: "Sistema completo de identidad de marca y diseño",
+      id: "4",
+      title: "MiRecetario",
+      description: "Gestor de recetas con planificación de menús y listas de compras",
       longDescription:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+        "MiRecetario es una aplicación diseñada para facilitar la gestión de recetas, la planificación de menús semanales y la organización de listas de compras. La idea principal del proyecto es ofrecer una plataforma donde los usuarios puedan crear, editar y clasificar sus recetas, asignarlas a un plan de comidas semanal y generar una lista de ingredientes por comprar para sus recetas.",
       image: "/placeholder.svg?key=brand",
-      category: "Diseño",
-      technologies: ["Adobe Illustrator", "Adobe Photoshop", "Figma", "InDesign"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false,
-    },
-    {
-      id: "6",
-      title: "Plataforma Inmobiliaria",
-      description: "Sistema de listado y gestión de propiedades",
-      longDescription:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-      image: "/placeholder.svg?key=realestate",
       category: "Aplicación Web",
-      technologies: ["Next.js", "Supabase", "Mapbox", "Tailwind", "Framer Motion"],
-      liveUrl: "#",
-      githubUrl: "#",
+      technologies: ["Java", "TypeScript", "React", "MySQL", "Spring Boot", "Node.js"],
+      githubUrl: "https://github.com/angelicarodriguezco/MiRecetario",
       featured: false,
-    },
+    }
   ]
-
-  const categories = ["Todos", "Aplicación Web", "UI/UX", "Diseño"]
-
-  const filteredProjects =
-    selectedCategory === "Todos" ? projects : projects.filter((project) => project.category === selectedCategory)
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -163,7 +126,7 @@ export default function GallerySection() {
                   backgroundColor: `${vibrantColors.coral}15`
                 }}
               >
-                Portafolio
+                Proyectos
               </Badge>
             </motion.div>
             <h2 
@@ -183,42 +146,10 @@ export default function GallerySection() {
             </p>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="flex justify-center">
-            <div 
-              className="flex flex-wrap gap-2 p-2 rounded-2xl border-2"
-              style={{ 
-                backgroundColor: `${vibrantColors.coral}10`,
-                borderColor: vibrantColors.coral
-              }}
-            >
-              {categories.map((category) => (
-                <motion.button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className="px-6 py-3 rounded-xl font-medium transition-all duration-300"
-                  style={{
-                    backgroundColor: selectedCategory === category 
-                      ? `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})`
-                      : 'transparent',
-                    color: selectedCategory === category 
-                      ? 'white' 
-                      : vibrantColors.purple,
-                    border: selectedCategory === category 
-                      ? 'none' 
-                      : `2px solid ${vibrantColors.coral}`
-                  }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {category}
-                </motion.button>
-              ))}
-            </div>
-          </motion.div>
 
-          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div layout className="grid md:grid-cols-2 gap-8">
             <AnimatePresence mode="wait">
-              {filteredProjects.map((project, index) => (
+              {projects.map((project, index) => (
                 <motion.div
                   key={project.id}
                   layout
@@ -232,7 +163,6 @@ export default function GallerySection() {
                     stiffness: 100,
                     damping: 15,
                   }}
-                  className={project.featured ? "md:col-span-2 lg:col-span-2" : ""}
                 >
                   <Card
                     className="group overflow-hidden bg-white border-2 hover:shadow-lg transition-all duration-500 cursor-pointer h-full"
@@ -246,61 +176,11 @@ export default function GallerySection() {
                       <motion.img
                         src={project.image}
                         alt={project.title}
-                        className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${
-                          project.featured ? "h-64" : "h-48"
-                        }`}
+                        className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                         whileHover={{ scale: 1.05 }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                      <motion.div
-                        className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        initial={{ y: 20 }}
-                        whileHover={{ y: 0 }}
-                      >
-                        <Button
-                          size="sm"
-                          className="text-white border-0"
-                          style={{ 
-                            background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})` 
-                          }}
-                          onClick={(e) => {
-                            e.stopPropagation()
-                            window.open(project.liveUrl, "_blank")
-                          }}
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Demo en Vivo
-                        </Button>
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          className="border-2"
-                          style={{ 
-                            borderColor: vibrantColors.orange,
-                            color: vibrantColors.purple,
-                            backgroundColor: `${vibrantColors.orange}20`
-                          }}
-                          onClick={(e) => {
-                            e.stopPropagation()
-                            window.open(project.githubUrl, "_blank")
-                          }}
-                        >
-                          <Github className="w-4 h-4 mr-2" />
-                          Código
-                        </Button>
-                      </motion.div>
 
-                      {project.featured && (
-                        <Badge 
-                          className="absolute top-4 left-4 text-white"
-                          style={{ 
-                            background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})` 
-                          }}
-                        >
-                          Destacado
-                        </Badge>
-                      )}
                     </div>
 
                     <div className="p-6 space-y-4">
@@ -408,14 +288,10 @@ export default function GallerySection() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 pt-4">
-                  <Button className="flex-1" onClick={() => window.open(selectedProject.liveUrl, "_blank")}>
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Ver Demo en Vivo
-                  </Button>
+                <div className="flex justify-center pt-4">
                   <Button
                     variant="outline"
-                    className="flex-1 bg-transparent"
+                    className="px-8 bg-transparent"
                     onClick={() => window.open(selectedProject.githubUrl, "_blank")}
                   >
                     <Github className="w-4 h-4 mr-2" />

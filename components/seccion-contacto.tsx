@@ -54,20 +54,17 @@ export default function ContactSection() {
     {
       icon: Mail,
       label: "Correo",
-      value: "alex.rodriguez@email.com",
-      href: "mailto:alex.rodriguez@email.com",
+      value: "mariaangelica@rodriguezcoto.com",
     },
     {
       icon: Phone,
       label: "Teléfono",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+506 7058 9304",
     },
     {
       icon: MapPin,
       label: "Ubicación",
-      value: "San Francisco, CA",
-      href: "#",
+      value: "San Ramón, Costa Rica",
     },
   ]
 
@@ -75,21 +72,15 @@ export default function ContactSection() {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/angelicarodriguezco",
       color: "hover:text-gray-900",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/maria-angelica-rodriguez-coto-209898385/",
       color: "hover:text-blue-600",
-    },
-    {
-      icon: Twitter,
-      label: "Twitter",
-      href: "https://twitter.com",
-      color: "hover:text-blue-400",
-    },
+    }
   ]
 
   const containerVariants = {
@@ -181,8 +172,7 @@ export default function ContactSection() {
               Trabajemos Juntos
             </h2>
             <p className="text-xl max-w-3xl mx-auto text-balance leading-relaxed" style={{ color: vibrantColors.purple }}>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-            </p>
+            ¿Listo para hacer realidad tus ideas? Siempre entusiasmada de hablar sobre nuevos proyectos y oportunidades. Creemos algo increíble juntos.            </p>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -198,7 +188,7 @@ export default function ContactSection() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name" className="font-medium" style={{ color: vibrantColors.purple }}>
-                        Nombre *
+                        Nombre
                       </Label>
                       <Input
                         id="name"
@@ -215,7 +205,7 @@ export default function ContactSection() {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email" className="font-medium" style={{ color: vibrantColors.purple }}>
-                        Email *
+                        Email
                       </Label>
                       <Input
                         id="email"
@@ -235,7 +225,7 @@ export default function ContactSection() {
 
                   <div className="space-y-2">
                     <Label htmlFor="subject" className="font-medium" style={{ color: vibrantColors.purple }}>
-                      Asunto *
+                      Asunto
                     </Label>
                     <Input
                       id="subject"
@@ -253,7 +243,7 @@ export default function ContactSection() {
 
                   <div className="space-y-2">
                     <Label htmlFor="message" className="font-medium" style={{ color: vibrantColors.purple }}>
-                      Mensaje *
+                      Mensaje
                     </Label>
                     <Textarea
                       id="message"
@@ -290,7 +280,7 @@ export default function ContactSection() {
                             animate={{ rotate: 360 }}
                             transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                           />
-                          Enviando...
+                          Enviando por WhatsApp...
                         </motion.div>
                       ) : isSubmitted ? (
                         <motion.div
@@ -300,12 +290,12 @@ export default function ContactSection() {
                           transition={{ type: "spring", stiffness: 500, damping: 30 }}
                         >
                           <CheckCircle className="w-5 h-5" />
-                          ¡Mensaje Enviado!
+                          ¡Mensaje Enviado por WhatsApp!
                         </motion.div>
                       ) : (
                         <>
                           <Send className="w-5 h-5 mr-2" />
-                          Enviar Mensaje
+                          Enviar Mensaje de WhatsApp
                         </>
                       )}
                     </Button>
@@ -318,21 +308,18 @@ export default function ContactSection() {
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold" style={{ color: vibrantColors.purple }}>Información de Contacto</h3>
                 <p className="leading-relaxed" style={{ color: vibrantColors.purple }}>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                </p>
+                Si quieres hablar sobre un proyecto o simplemente saludarme, siempre estoy dispuesta a hablar. No dudes en contactarme a través de cualquiera de los canales a continuación.                </p>
               </div>
 
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
-                  <motion.a
+                  <motion.div
                     key={info.label}
-                    href={info.href}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-white border-2 hover:shadow-lg transition-all duration-300 group"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-white border-2 transition-all duration-300 group"
                     style={{ 
                       borderColor: vibrantColors.coral,
                       backgroundColor: `${vibrantColors.coral}05`
                     }}
-                    whileHover={{ x: 5, scale: 1.02 }}
                     initial={{ opacity: 0, x: -20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                     transition={{ delay: index * 0.1 + 0.5 }}
@@ -351,7 +338,7 @@ export default function ContactSection() {
                       </div>
                       <div className="text-sm" style={{ color: vibrantColors.coral }}>{info.value}</div>
                     </div>
-                  </motion.a>
+                  </motion.div>
                 ))}
               </div>
 
@@ -381,34 +368,11 @@ export default function ContactSection() {
                   ))}
                 </div>
               </div>
-
-              <motion.div
-                className="p-6 rounded-xl border-2"
-                style={{ 
-                  background: `linear-gradient(135deg, ${vibrantColors.purple}10, ${vibrantColors.coral}10)`,
-                  borderColor: vibrantColors.coral
-                }}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                transition={{ delay: 1 }}
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <motion.div
-                    className="w-3 h-3 bg-green-500 rounded-full"
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                  />
-                  <span className="font-semibold" style={{ color: vibrantColors.purple }}>Disponible para Proyectos</span>
-                </div>
-                <p className="text-sm" style={{ color: vibrantColors.purple }}>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                </p>
-              </motion.div>
             </motion.div>
           </div>
 
           <motion.div variants={itemVariants} className="text-center pt-16 border-t" style={{ borderColor: vibrantColors.coral }}>
-            <p style={{ color: vibrantColors.purple }}>© 2024 Nombre. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+            <p style={{ color: vibrantColors.purple }}>© 2025 Maria Angelica Rodriguez Coto. Elaborado con pasión y precisión.</p>
           </motion.div>
         </motion.div>
       </div>
