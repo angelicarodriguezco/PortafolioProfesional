@@ -98,9 +98,9 @@ export default function AboutSection() {
             >
               Creando Excelencia Digital
             </h2>
-            <p className="text-xl max-w-3xl mx-auto text-balance leading-relaxed" style={{ color: vibrantColors.purple }}>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-            </p>
+              <p className="text-xl max-w-3xl mx-auto text-balance leading-relaxed" style={{ color: vibrantColors.purple }}>
+              Unman.
+              </p>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -120,33 +120,6 @@ export default function AboutSection() {
                 </div>
               </div>
 
-              <motion.div className="grid grid-cols-3 gap-6 pt-8 border-t" style={{ borderColor: vibrantColors.coral }} variants={containerVariants}>
-                {[
-                  { number: "5+", label: "Años de Experiencia" },
-                  { number: "50+", label: "Proyectos Completados" },
-                  { number: "20+", label: "Clientes Satisfechos" },
-                ].map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    variants={itemVariants}
-                    className="text-center"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <div 
-                      className="text-3xl font-bold mb-2"
-                      style={{ 
-                        background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})`,
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text'
-                      }}
-                    >
-                      {stat.number}
-                    </div>
-                    <div className="text-sm" style={{ color: vibrantColors.purple }}>{stat.label}</div>
-                  </motion.div>
-                ))}
-              </motion.div>
             </motion.div>
 
             <motion.div variants={itemVariants} className="relative">
@@ -200,7 +173,7 @@ export default function AboutSection() {
                 Valores Fundamentales
               </h3>
               <p className="max-w-2xl mx-auto" style={{ color: vibrantColors.purple }}>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+              Los principios que guían mi trabajo y me impulsan a ofrecer resultados excepcionales
               </p>
             </div>
 

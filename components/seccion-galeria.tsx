@@ -37,7 +37,7 @@ export default function GallerySection() {
       description: "Sistema de Batallas Pokémon",
       longDescription:
         "Aplicación web de batallas Pokémon donde los usuarios pueden crear equipos de Pokémon, desafiar a amigos y participar en combates estratégicos. El sistema incluye gestión de usuarios, creación de equipos personalizados, sistema de batallas por turnos, historial de partidas, tabla de liderazgo y sistema de amigos. Los usuarios pueden registrarse, crear múltiples equipos con diferentes Pokémon, desafiar a otros jugadores y seguir su progreso a través de estadísticas detalladas.",
-      image: "/placeholder.svg?key=dashboard",
+      image: "/FotoPokemonFight.png",
       category: "Aplicación Web",
       technologies: ["Node.js", "Express.js", "MongoDB", "HTML", "CSS", "JavaScript"],
       githubUrl: "https://github.com/ECF2001/Pokemon-Fight",
@@ -49,7 +49,7 @@ export default function GallerySection() {
       description: "Plataforma de Inversión en Bolsa de Valores",
       longDescription:
         "Wealthify es una plataforma web integral de inversión en bolsa de valores que conecta asesores financieros con inversionistas. La aplicación permite a los usuarios registrarse como asesores o clientes, gestionar portafolios de inversión, visualizar datos de mercado en tiempo real, realizar compras y ventas de acciones con PayPal, y generar reportes financieros detallados.",
-      image: "/placeholder.svg?key=mobile",
+      image: "/FotoWealthify.png",
       category: "Aplicación Web",
       technologies: ["C#", "ASP.NET", "Entity Framework", "SQL Server", "HTML", "CSS", "JavaScript", "Cloudinary", "Yahoo Finance API", "PayPal API"],
       githubUrl: "https://github.com/angelicarodriguezco/Proyecto2Grupo3",
@@ -61,7 +61,7 @@ export default function GallerySection() {
       description: "Buscador y gestor de imágenes favoritas de Flickr",
       longDescription:
         "FlickrFavorites es una aplicación web que permite a los usuarios buscar imágenes de Flickr, marcarlas como favoritas y gestionar su colección personal de imágenes favoritas. La aplicación incluye una galería de búsqueda de imágenes, y un panel de gestión de favoritos donde los usuarios pueden editar títulos de sus imágenes guardadas.",
-      image: "/placeholder.svg?key=ai",
+      image: "/FotoFlickrFavorites.png",
       category: "Aplicación Web",
       technologies: ["React", "Node.js", "MongoDB", "Jest", "Flickr API"],
       githubUrl: "https://github.com/angelicarodriguezco/FlickrFavorites",
@@ -73,7 +73,7 @@ export default function GallerySection() {
       description: "Gestor de recetas con planificación de menús y listas de compras",
       longDescription:
         "MiRecetario es una aplicación diseñada para facilitar la gestión de recetas, la planificación de menús semanales y la organización de listas de compras. La idea principal del proyecto es ofrecer una plataforma donde los usuarios puedan crear, editar y clasificar sus recetas, asignarlas a un plan de comidas semanal y generar una lista de ingredientes por comprar para sus recetas.",
-      image: "/placeholder.svg?key=brand",
+      image: "/FotoMiRecetario.png",
       category: "Aplicación Web",
       technologies: ["Java", "TypeScript", "React", "MySQL", "Spring Boot", "Node.js"],
       githubUrl: "https://github.com/angelicarodriguezco/MiRecetario",
