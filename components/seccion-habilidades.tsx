@@ -2,7 +2,6 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
 export default function SkillsSection() {
@@ -15,35 +14,45 @@ export default function SkillsSection() {
   }
 
   const skills = [
-    { name: "React/Next.js", logo: "/logosHabilidades/LogoReact.png", category: "Frontend" },
-    { name: "CSS", logo: "/logosHabilidades/LogoCSS.png", category: "Frontend" },
-    { name: "HTML", logo: "/logosHabilidades/LogoHTML.png", category: "Frontend" },
-    { name: "JavaScript", logo: "/logosHabilidades/LogoJavaScript.png", category: "Frontend" },
-    { name: "TypeScript", logo: "/logosHabilidades/LogoTypescript.png", category: "Frontend" },
-    { name: "FastAPI", logo: "/logosHabilidades/LogoFastAPI.png", category: "Frontend" },
-    { name: "C#", logo: "/logosHabilidades/LogoCSharp.png", category: "Frontend" },
-    { name: "Node.js", logo: "/logosHabilidades/LogoNodejs.png", category: "Backend" },
-    { name: "Git/GitHub", logo: ["/logosHabilidades/LogoGit.png", "/logosHabilidades/LogoGitub.svg"], category: "Backend" },
-    { name: "BitBucket", logo: "🟢", category: "Backend" },
-    { name: "ASP.NET", logo: "🟢", category: "Backend" },
-    { name: "Entity Framework", logo: "🟢", category: "Backend" },
-    { name: "Cloudinary", logo: "🟢", category: "Backend" },
-    { name: "Yahoo Finance API", logo: "🟢", category: "Backend" },
-    { name: "PayPal API", logo: "🟢", category: "Backend" },
-    { name: "Express.js", logo: "🟢", category: "Backend" },
-    { name: "Flickr API", logo: "🟢", category: "Backend" },
-    { name: "Jest", logo: "🟢", category: "Backend" },
-    { name: "Docker", logo: "🟢", category: "Backend" },
-    { name: "Java", logo: "🟢", category: "Backend" },
-    { name: "Spring Boot", logo: "🟢", category: "Backend" },
-    { name: "MySQL", logo: "🟢", category: "Backend" },
-    { name: "SQL Server", logo: "🟢", category: "Backend" },    
-    { name: "Python", logo: "🐍", category: "Backend" },
-    { name: "PostgreSQL", logo: "🐘", category: "Backend" },
-    { name: "MongoDB", logo: "🍃", category: "Backend" },
+    { name: "React/Next.js", logo: "/logosHabilidades/React.png", category: "Frontend" },
+    { name: "CSS", logo: "/logosHabilidades/CSS.png", category: "Frontend" },
+    { name: "HTML", logo: "/logosHabilidades/HTML.png", category: "Frontend" },
+    { name: "JavaScript", logo: "/logosHabilidades/Javascript.png", category: "Frontend" },
+    { name: "TypeScript", logo: "/logosHabilidades/Typescript.png", category: "Frontend" },
+    
+    { name: "Node.js", logo: "/logosHabilidades/Nodejs.png", category: "Backend" },
+    { name: "Python", logo: "/logosHabilidades/Python.png", category: "Backend" },
+    { name: "Java", logo: "/logosHabilidades/Java.png", category: "Backend" },
+    { name: "C#", logo: "/logosHabilidades/CSharp.png", category: "Backend" },
+    { name: "Spring Boot", logo: "/logosHabilidades/Springboot.png", category: "Backend" },
+    { name: "ASP.NET", logo: "/logosHabilidades/NETCore.png", category: "Backend" },
+    
+    { name: "MySQL", logo: "/logosHabilidades/MySQL.png", category: "Bases de datos" },
+    { name: "PostgreSQL", logo: "/logosHabilidades/PostgreSQL.png", category: "Bases de datos" },
+    { name: "MongoDB", logo: "/logosHabilidades/MongoDB.png", category: "Bases de datos" },
+    { name: "SQL Server", logo: "/logosHabilidades/SQLServer.png", category: "Bases de datos" },
+    
+    { name: "Cloudinary", logo: "/logosHabilidades/Cloudinary.png", category: "APIs y Servicios" },
+    { name: "Yahoo Finance API", logo: "/logosHabilidades/Yahoo.png", category: "APIs y Servicios" },
+    { name: "PayPal API", logo: "/logosHabilidades/Paypal.png", category: "APIs y Servicios" },
+    { name: "Flickr API", logo: "/logosHabilidades/Flickr.png", category: "APIs y Servicios" },
+    
+    { name: "Git", logo: "/logosHabilidades/Git.png", category: "Herramientas de desarrollo" },
+    { name: "Github", logo: "/logosHabilidades/Github.png", category: "Herramientas de desarrollo" },
+    { name: "BitBucket", logo: "/logosHabilidades/Bitbucket.png", category: "Herramientas de desarrollo" },
+    { name: "Docker", logo: "/logosHabilidades/Docker.png", category: "Herramientas de desarrollo" },
+    { name: "Postman", logo: "/logosHabilidades/Postman.png", category: "Herramientas de desarrollo" },
   ]
 
-  const categories = ["Frontend", "Backend", "Diseño"]
+  const categories = ["Frontend", "Backend", "Bases de datos", "APIs y Servicios", "Herramientas de desarrollo"]
+
+  const stickyNoteSVGs = {
+    "Frontend": ["BlueStickyNote.svg", "BlueStickyNote.svg", "RedStickyNote.svg", "YellowStickyNote.svg", "BlueStickyNote.svg"],
+    "Backend": ["GreenStickyNote.svg", "YellowStickyNote.svg", "RedStickyNote.svg", "YellowStickyNote.svg", "GreenStickyNote.svg", "BlueStickyNote.svg"],
+    "Bases de datos": ["YellowStickyNote.svg", "BlueStickyNote.svg", "GreenStickyNote.svg", "RedStickyNote.svg"],
+    "APIs y Servicios": ["YellowStickyNote.svg", "YellowStickyNote.svg", "BlueStickyNote.svg", "BlueStickyNote.svg"],
+    "Herramientas de desarrollo": ["RedStickyNote.svg", "YellowStickyNote.svg", "BlueStickyNote.svg", "BlueStickyNote.svg", "RedStickyNote.svg"]
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -131,55 +140,201 @@ export default function SkillsSection() {
                   {category}
                 </h4>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                  {skills
-                    .filter((skill) => skill.category === category)
-                    .map((skill, index) => (
-                      <motion.div
-                        key={skill.name}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                        transition={{ delay: index * 0.1 + 0.5 }}
-                        whileHover={{ scale: 1.05, y: -5 }}
-                        className="flex flex-col items-center justify-center p-6 rounded-xl border-2 transition-all duration-300 group cursor-pointer"
-                        style={{ 
-                          borderColor: vibrantColors.coral,
-                          backgroundColor: `${vibrantColors.coral}05`
-                        }}
-                      >
-                        <div className="w-16 h-16 mb-3 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                          {Array.isArray(skill.logo) ? (
-                            <div className="flex gap-1">
-                              {skill.logo.map((logo, index) => (
-                                <img 
-                                  key={index}
-                                  src={logo} 
-                                  alt={`${skill.name} ${index + 1}`}
-                                  className="w-7 h-7 object-contain"
-                                />
-                              ))}
-                            </div>
-                          ) : skill.logo.startsWith('/') ? (
-                            <img 
-                              src={skill.logo} 
-                              alt={skill.name}
-                              className="w-full h-full object-contain"
-                            />
-                          ) : (
-                            <span className="text-4xl">{skill.logo}</span>
-                          )}
-                        </div>
-                        <span 
-                          className="text-sm font-medium text-center group-hover:font-semibold transition-all duration-300"
-                          style={{ color: vibrantColors.purple }}
+                 {category === "Backend" ? (
+                   <div className="flex justify-center gap-6 pb-4">
+                     {skills
+                       .filter((skill) => skill.category === category)
+                       .map((skill, index) => {
+                          const svgFile = stickyNoteSVGs[category as keyof typeof stickyNoteSVGs][index] || "1.svg"
+                          const rotation = Math.random() * 20 - 10
+                          
+                          return (
+                        <motion.div
+                          key={skill.name}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={isInView ? { 
+                            opacity: 1, 
+                            rotate: [rotation, rotation + (Math.random() * 8 - 4), rotation - (Math.random() * 8 - 4), rotation]
+                          } : { opacity: 0, y: 20 }}
+                          transition={{ 
+                            delay: index * 0.1 + 0.3,
+                            duration: 0.8,
+                            ease: "easeOut",
+                            rotate: {
+                              duration: 3 + Math.random() * 2,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                            }
+                          }}
+                          className="relative"
+                          style={{ transform: `rotate(${rotation}deg)` }}
                         >
-                          {skill.name}
-                        </span>
-                      </motion.div>
+                           <div className={`relative flex-shrink-0 ${skill.name === "Yahoo Finance API" ? "w-56 h-48" : "w-48 h-48"}`}>
+                            <img 
+                              src={`/SVGStickyNotes/${svgFile}`}
+                              alt={`Sticky note ${index + 1}`}
+                              className="w-full h-full object-contain drop-shadow-lg"
+                            />
+                            
+                            <div className="absolute inset-0 flex flex-col items-center justify-center p-6" style={{ 
+                              display: 'flex',
+                              flexDirection: 'column',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              textAlign: 'center',
+                              width: '100%',
+                              height: '100%'
+                            }}>
+                              <div className="w-20 h-20 mb-4 flex items-center justify-center relative" style={{
+                                marginLeft: 'auto',
+                                marginRight: 'auto'
+                              }}>
+                                {Array.isArray(skill.logo) ? (
+                                  <div className="flex gap-1">
+                                    {skill.logo.map((logo, logoIndex) => (
+                                      <div key={logoIndex} className="relative">
+                                        <img 
+                                          src={logo} 
+                                          alt={`${skill.name} ${logoIndex + 1}`}
+                                          className="w-10 h-10 object-contain"
+                                        />
+                        </div>
                     ))}
                 </div>
-              </motion.div>
-            ))}
+                                ) : (
+                                      <div className="relative">
+                                        <img 
+                                          src={skill.logo} 
+                                          alt={skill.name}
+                                          className="w-full h-full object-contain"
+                                        />
+                                  </div>
+                                )}
+                              </div>
+                              
+                              <div className="relative w-full flex justify-center items-center" style={{
+                                textAlign: 'center',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                              }}>
+                                <span 
+                                  className="text-base font-bold leading-tight"
+                style={{ 
+                                    color: vibrantColors.purple,
+                                    textAlign: 'center',
+                                    display: 'block',
+                                    width: '100%'
+                                  }}
+                                >
+                                  {skill.name}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                        )
+                      })}
+                   </div>
+                ) : (
+                  <div className="flex justify-center gap-6 pb-4">
+                    {skills
+                      .filter((skill) => skill.category === category)
+                      .map((skill, index) => {
+                        const svgFile = stickyNoteSVGs[category as keyof typeof stickyNoteSVGs][index] || "1.svg"
+                        const rotation = Math.random() * 20 - 10
+                        
+                        return (
+                        <motion.div
+                          key={skill.name}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={isInView ? { 
+                            opacity: 1, 
+                            rotate: [rotation, rotation + (Math.random() * 8 - 4), rotation - (Math.random() * 8 - 4), rotation]
+                          } : { opacity: 0, y: 20 }}
+                          transition={{ 
+                            delay: index * 0.1 + 0.3,
+                            duration: 0.8,
+                            ease: "easeOut",
+                            rotate: {
+                              duration: 3 + Math.random() * 2,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                            }
+                          }}
+                          className="relative"
+                          style={{ transform: `rotate(${rotation}deg)` }}
+                        >
+                            <div className={`relative flex-shrink-0 ${skill.name === "Yahoo Finance API" ? "w-56 h-48" : "w-48 h-48"}`}>
+                              <img 
+                                src={`/SVGStickyNotes/${svgFile}`}
+                                alt={`Sticky note ${index + 1}`}
+                                className={`w-full h-full drop-shadow-lg ${skill.name === "Yahoo Finance API" ? "object-fill" : "object-contain"}`}
+                              />
+                              
+                              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 pt-12" style={{ 
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                textAlign: 'center',
+                                width: '100%',
+                                height: '100%'
+                              }}>
+                                <div className="w-20 h-20 mb-4 flex items-center justify-center relative" style={{
+                                  marginLeft: 'auto',
+                                  marginRight: 'auto'
+                                }}>
+                                  {Array.isArray(skill.logo) ? (
+                                    <div className="flex gap-1">
+                                      {skill.logo.map((logo, logoIndex) => (
+                                        <div key={logoIndex} className="relative">
+                                          <img 
+                                            src={logo} 
+                                            alt={`${skill.name} ${logoIndex + 1}`}
+                                            className="w-10 h-10 object-contain"
+                                          />
+                                        </div>
+                                      ))}
+                                    </div>
+                                  ) : (
+                                      <div className="relative">
+                                        <img 
+                                          src={skill.logo} 
+                                          alt={skill.name}
+                                          className="w-full h-full object-contain"
+                                        />
+                                    </div>
+                                  )}
+                        </div>
+
+                                <div className="relative w-full flex justify-center items-center" style={{
+                                  textAlign: 'center',
+                                  display: 'flex',
+                                  justifyContent: 'center',
+                                  alignItems: 'center'
+                                }}>
+                                  <span 
+                                    className="text-base font-bold leading-tight"
+                              style={{ 
+                                color: vibrantColors.purple,
+                                      textAlign: 'center',
+                                      display: 'block',
+                                      width: '100%'
+                                    }}
+                                  >
+                                    {skill.name}
+                                  </span>
+                                </div>
+                        </div>
+                      </div>
+                          </motion.div>
+                        )
+                      })}
+                  </div>
+                )}
+                  </motion.div>
+                ))}
           </motion.div>
 
         </motion.div>

@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Code, Palette, Rocket, Users } from "lucide-react"
+import { Code, Palette, Rocket, Users, Star, BookOpen } from "lucide-react"
 
 export default function AboutSection() {
   const ref = useRef(null)
@@ -43,22 +43,22 @@ export default function AboutSection() {
   const values = [
     {
       icon: Code,
-      title: "Código Limpio",
+      title: "Calidad",
       description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
     },
     {
       icon: Palette,
-      title: "Excelencia en Diseño",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-    },
-    {
-      icon: Rocket,
       title: "Innovación",
       description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
     },
     {
       icon: Users,
       title: "Colaboración",
+      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+    },
+    {
+      icon: Rocket,
+      title: "Aprendizaje Continuo",
       description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
     },
   ]
@@ -98,9 +98,6 @@ export default function AboutSection() {
             >
               Creando Excelencia Digital
             </h2>
-              <p className="text-xl max-w-3xl mx-auto text-balance leading-relaxed" style={{ color: vibrantColors.purple }}>
-              Unman.
-              </p>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -209,6 +206,94 @@ export default function AboutSection() {
                 </motion.div>
               ))}
             </motion.div>
+          </motion.div>
+
+          {/* Sección Visión y Misión */}
+          <motion.div variants={itemVariants} className="space-y-12">
+            <div className="text-center">
+              <h3 
+                className="text-3xl font-semibold mb-4"
+                style={{ 
+                  background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})`,
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}
+              >
+                Visión y Misión
+              </h3>
+              <p className="max-w-2xl mx-auto" style={{ color: vibrantColors.purple }}>
+                Los pilares que definen mi propósito profesional y mi compromiso con la excelencia
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              <motion.div
+                variants={itemVariants}
+                whileHover={{ y: -5 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              >
+                <Card 
+                  className="p-8 h-full bg-white border-2 hover:shadow-lg transition-all duration-300"
+                  style={{ 
+                    borderColor: vibrantColors.coral,
+                    backgroundColor: `${vibrantColors.coral}05`
+                  }}
+                >
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-3">
+                      <div 
+                        className="w-12 h-12 rounded-lg flex items-center justify-center"
+                        style={{ 
+                          background: `linear-gradient(135deg, ${vibrantColors.purple}20, ${vibrantColors.coral}20)`
+                        }}
+                      >
+                        <Star className="w-6 h-6" style={{ color: vibrantColors.coral }} />
+                      </div>
+                      <h4 className="text-2xl font-bold" style={{ color: vibrantColors.purple }}>Misión</h4>
+                    </div>
+                    <p className="text-lg leading-relaxed" style={{ color: vibrantColors.purple }}>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                    </p>
+                  </div>
+                </Card>
+              </motion.div>
+
+              <motion.div
+                variants={itemVariants}
+                whileHover={{ y: -5 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              >
+                <Card 
+                  className="p-8 h-full bg-white border-2 hover:shadow-lg transition-all duration-300"
+                  style={{ 
+                    borderColor: vibrantColors.coral,
+                    backgroundColor: `${vibrantColors.coral}05`
+                  }}
+                >
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-3">
+                        <div 
+                          className="w-12 h-12 rounded-lg flex items-center justify-center"
+                          style={{ 
+                            background: `linear-gradient(135deg, ${vibrantColors.coral}20, ${vibrantColors.purple}20)`
+                          }}
+                        >
+                          <BookOpen className="w-6 h-6" style={{ color: vibrantColors.coral }} />
+                        </div>
+                        <h4 className="text-2xl font-bold" style={{ color: vibrantColors.purple }}>Visión</h4>
+                      </div>
+                      <p className="text-lg leading-relaxed" style={{ color: vibrantColors.purple }}>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                    </p>
+                  </div>
+                </Card>
+              </motion.div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

@@ -8,7 +8,12 @@ import { Download, Github, Linkedin, Mail } from "lucide-react"
 export default function HeroSection() {
   const [displayText, setDisplayText] = useState("")
   const [currentIndex, setCurrentIndex] = useState(0)
-  const fullText = "Desarrollador Full Stack & Diseñador UI/UX"
+  
+  useEffect(() => {
+    setDisplayText("")
+    setCurrentIndex(0)
+  }, [])
+  const fullText = "Desarrolladora Full Stack"
   const containerRef = useRef<HTMLDivElement>(null)
 
   const vibrantColors = {
@@ -126,7 +131,6 @@ export default function HeroSection() {
               className="flex-shrink-0 order-1 lg:order-1"
             >
               <div className="relative w-80 h-96 lg:w-96 lg:h-[28rem]">
-                {/* Elementos decorativos flotantes con animaciones */}
                 <motion.div 
                   className="absolute -top-4 -right-4 w-8 h-8 bg-purple-200 rounded-full"
                   animate={{
@@ -200,7 +204,6 @@ export default function HeroSection() {
                   }}
                 />
                 
-                {/* Elementos que aparecen y desaparecen */}
                 <motion.div 
                   className="absolute top-8 left-8 w-2 h-2 bg-orange-300 rounded-full"
                   animate={{
@@ -273,7 +276,7 @@ export default function HeroSection() {
                   delay: 0.5,
                 }}
               >
-                Nombre
+                Angélica Rodríguez
               </motion.h1>
 
               <motion.div
@@ -348,18 +351,6 @@ export default function HeroSection() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    className="px-8 py-3 text-lg font-semibold rounded-full border-2 transition-all duration-300"
-                    style={{ 
-                      borderColor: vibrantColors.coral,
-                      color: vibrantColors.purple,
-                      backgroundColor: `${vibrantColors.coral}15`
-                    }}
-                  >
-                    Ver Portafolio
-                  </Button>
                 </motion.div>
               </motion.div>
 
@@ -379,8 +370,11 @@ export default function HeroSection() {
                       background: `linear-gradient(135deg, ${vibrantColors.purple}20, ${vibrantColors.coral}20)`,
                       color: vibrantColors.purple
                     }}
+                    asChild
                   >
-                    <Github className="w-6 h-6" />
+                    <a href="https://github.com/angelicarodriguezco" target="_blank" rel="noopener noreferrer">
+                      <Github className="w-6 h-6" />
+                    </a>
                   </Button>
                 </motion.div>
                 <motion.div
@@ -395,8 +389,11 @@ export default function HeroSection() {
                       background: `linear-gradient(135deg, ${vibrantColors.coral}20, ${vibrantColors.orange}20)`,
                       color: vibrantColors.coral
                     }}
+                    asChild
                   >
-                    <Linkedin className="w-6 h-6" />
+                    <a href="https://www.linkedin.com/in/maria-angelica-rodriguez-coto-209898385/" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="w-6 h-6" />
+                    </a>
                   </Button>
                 </motion.div>
                 <motion.div
@@ -411,8 +408,11 @@ export default function HeroSection() {
                       background: `linear-gradient(135deg, ${vibrantColors.orange}20, ${vibrantColors.purple}20)`,
                       color: vibrantColors.orange
                     }}
+                    asChild
                   >
-                    <Mail className="w-6 h-6" />
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mariaangelica@rodriguezcoto.com" target="_blank" rel="noopener noreferrer">
+                      <Mail className="w-6 h-6" />
+                    </a>
                   </Button>
                 </motion.div>
               </motion.div>
@@ -421,7 +421,6 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
       
-      {/* Línea gris de separación */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
     </section>
   )
