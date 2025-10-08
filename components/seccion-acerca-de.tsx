@@ -84,7 +84,7 @@ export default function AboutSection() {
                   backgroundColor: `${vibrantColors.coral}15`
                 }}
               >
-                Acerca de Mí
+                Sobre Mí
               </Badge>
             </motion.div>
             <h2 
@@ -121,12 +121,128 @@ export default function AboutSection() {
 
             <motion.div variants={itemVariants} className="relative">
               <motion.div
-                className="relative rounded-2xl overflow-hidden"
-                whileHover={{ scale: 1.02 }}
+                className="relative"
+                initial={{ opacity: 0, y: 50, rotate: -2 }}
+                animate={isInView ? { 
+                  opacity: 1, 
+                  y: 0, 
+                  rotate: 0,
+                  transition: {
+                    duration: 1.2,
+                    ease: "easeOut",
+                    delay: 0.3
+                  }
+                } : { opacity: 0, y: 50, rotate: -2 }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  rotate: 1,
+                  transition: { duration: 0.3 }
+                }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                <div className="w-full h-[600px] bg-black flex items-center justify-center">
-                </div>
+                <motion.img 
+                  src="/collageSobreMi/Collage.svg" 
+                  alt="Collage sobre mi trayectoria profesional" 
+                  className="w-full scale-150"
+                  animate={{
+                    y: [0, -5, 0],
+                    rotate: [0, 0.5, 0]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                
+                <motion.div
+                  className="absolute top-4 right-4"
+                  animate={{
+                    opacity: [0, 1, 0],
+                    scale: [0.5, 1.2, 0.5],
+                    rotate: [0, 180, 360]
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0
+                  }}
+                >
+                  <div 
+                    className="w-6 h-6"
+                    style={{
+                      background: 'linear-gradient(45deg, #fbbf24, #f59e0b)',
+                      clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)'
+                    }}
+                  />
+                </motion.div>
+                <motion.div
+                  className="absolute top-4 left-4"
+                  animate={{
+                    opacity: [0, 1, 0],
+                    scale: [0.5, 1.2, 0.5],
+                    rotate: [0, -180, -360]
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.8
+                  }}
+                >
+                  <div 
+                    className="w-6 h-6"
+                    style={{
+                      background: 'linear-gradient(45deg, #f59e0b, #d97706)',
+                      clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)'
+                    }}
+                  />
+                </motion.div>
+                <motion.div
+                  className="absolute bottom-4 right-4"
+                  animate={{
+                    opacity: [0, 1, 0],
+                    scale: [0.5, 1.2, 0.5],
+                    rotate: [0, 180, 360]
+                  }}
+                  transition={{
+                    duration: 12,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1.5
+                  }}
+                >
+                  <div 
+                    className="w-6 h-6"
+                    style={{
+                      background: 'linear-gradient(45deg, #f59e0b, #ea580c)',
+                      clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)'
+                    }}
+                  />
+                </motion.div>
+                <motion.div
+                  className="absolute bottom-4 left-4"
+                  animate={{
+                    opacity: [0, 1, 0],
+                    scale: [0.5, 1.2, 0.5],
+                    rotate: [0, -180, -360]
+                  }}
+                  transition={{
+                    duration: 11,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 2.2
+                  }}
+                >
+                  <div 
+                    className="w-6 h-6"
+                    style={{
+                      background: 'linear-gradient(45deg, #d97706, #b45309)',
+                      clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)'
+                    }}
+                  />
+                </motion.div>
               </motion.div>
 
               <motion.div
