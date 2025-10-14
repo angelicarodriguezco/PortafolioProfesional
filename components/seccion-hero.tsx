@@ -245,7 +245,7 @@ export default function HeroSection() {
                 />
                 
                 <img
-                  src="/FotoProfesional.svg"
+                  src="/logoYPerfil/FotoProfesional.svg"
                   alt="Foto Profesional"
                   className="w-full h-full object-contain"
                   style={{
@@ -313,7 +313,8 @@ export default function HeroSection() {
                 style={{ color: vibrantColors.purple }}
                 variants={itemVariants}
               >
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                Desarrolladora Full Stack especializada en crear aplicaciones y soluciones web modernas y escalables. Experiencia en frontend (React, JavaScript, HTML, CSS), backend (Python, Node.js, Java) y bases de datos (MySQL, MongoDB, PostgreSQL).
+
               </motion.p>
 
               <motion.div 

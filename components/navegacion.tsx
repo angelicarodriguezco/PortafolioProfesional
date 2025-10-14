@@ -17,8 +17,7 @@ export default function Navigation({ currentSection }: NavigationProps) {
   }
 
   const navItems = [
-    { id: "logotipo", label: "Inicio" },
-    { id: "hero", label: "Presentación" },
+    { id: "hero", label: "Inicio" },
     { id: "about", label: "Acerca de" },
     { id: "skills", label: "Habilidades" },
     { id: "gallery", label: "Proyectos" },
@@ -51,16 +50,14 @@ export default function Navigation({ currentSection }: NavigationProps) {
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-xl font-bold cursor-pointer"
-            style={{ 
-              background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.orange})`,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}
-            onClick={() => scrollToSection("logotipo")}
+            className="cursor-pointer"
+            onClick={() => scrollToSection("hero")}
           >
-            Portafolio
+            <img 
+              src="/logoYPerfil/Logo.svg" 
+              alt="Logo Portafolio" 
+              className="h-8 w-auto"
+            />
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8">

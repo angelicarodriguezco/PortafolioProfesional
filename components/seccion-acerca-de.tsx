@@ -44,22 +44,22 @@ export default function AboutSection() {
     {
       icon: Code,
       title: "Calidad",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      description: "Escribir código limpio, eficiente, documentado y bien probado.",
     },
     {
       icon: Palette,
       title: "Innovación",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      description: "Buscar constantemente mejores soluciones, metodologías y nuevas tecnologías.",
     },
     {
       icon: Users,
       title: "Colaboración",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      description: "Trabajar en equipo para intercambiar conocimientos y crecer profesionalmente.",
     },
     {
       icon: Rocket,
       title: "Aprendizaje Continuo",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+      description: "Mantenerme actualizada con nuevas tecnologías y metodologías de desarrollo.",
     },
   ]
 
@@ -324,7 +324,6 @@ export default function AboutSection() {
             </motion.div>
           </motion.div>
 
-          {/* Sección Visión y Misión */}
           <motion.div variants={itemVariants} className="space-y-12">
             <div className="text-center">
               <h3 
@@ -369,9 +368,9 @@ export default function AboutSection() {
                       <h4 className="text-2xl font-bold" style={{ color: vibrantColors.purple }}>Misión</h4>
                     </div>
                     <p className="text-lg leading-relaxed" style={{ color: vibrantColors.purple }}>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                    Transformar ideas en soluciones funcionales y escalables, 
+                    creando aplicaciones que generen valor para clientes, 
+                    aplicando buenas prácticas y tecnologías modernas.
                     </p>
                   </div>
                 </Card>
@@ -402,9 +401,8 @@ export default function AboutSection() {
                         <h4 className="text-2xl font-bold" style={{ color: vibrantColors.purple }}>Visión</h4>
                       </div>
                       <p className="text-lg leading-relaxed" style={{ color: vibrantColors.purple }}>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                      Ser una Software Engineer líder en el desarrollo de aplicaciones y soluciones web innovadoras, 
+                      constantemente actualizada sobre nuevas tecnologías y metodologías.
                     </p>
                   </div>
                 </Card>

@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send, CheckCircle } from "lucide-react"
+import { Mail, Phone, MapPin, Github, Linkedin, MessageCircle } from "lucide-react"
 
 export default function ContactSection() {
   const ref = useRef(null)
@@ -21,8 +21,6 @@ export default function ContactSection() {
     subject: "",
     message: "",
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const vibrantColors = {
     purple: "#3e196e",
@@ -37,17 +35,19 @@ export default function ContactSection() {
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
 
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+  const handleWhatsAppSubmit = () => {
+    const message = `Hola! Me interesa contactarte sobre tu portafolio.
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    setFormData({ name: "", email: "", subject: "", message: "" })
+Nombre: ${formData.name}
+Email: ${formData.email}
+Asunto: ${formData.subject}
+Mensaje: ${formData.message}
 
-    setTimeout(() => setIsSubmitted(false), 5000)
+¡Espero tu respuesta!`
+    
+    const whatsappUrl = `https://wa.me/50670589304?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
   }
 
   const contactInfo = [
@@ -80,6 +80,12 @@ export default function ContactSection() {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/maria-angelica-rodriguez-coto-209898385/",
       color: "hover:text-blue-600",
+    },
+    {
+      icon: Mail,
+      label: "Email",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=mariaangelica@rodriguezcoto.com",
+      color: "hover:text-green-600",
     }
   ]
 
@@ -184,7 +190,7 @@ export default function ContactSection() {
                   backgroundColor: `${vibrantColors.coral}05`
                 }}
               >
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name" className="font-medium" style={{ color: vibrantColors.purple }}>
@@ -262,42 +268,15 @@ export default function ContactSection() {
 
                   <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                     <Button
-                      type="submit"
-                      disabled={isSubmitting || isSubmitted}
+                      type="button"
+                      onClick={handleWhatsAppSubmit}
                       className="w-full py-6 text-lg font-semibold text-white transition-all duration-300"
                       style={{ 
                         background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})` 
                       }}
                     >
-                      {isSubmitting ? (
-                        <motion.div
-                          className="flex items-center gap-2"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                        >
-                          <motion.div
-                            className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full"
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                          />
-                          Enviando por WhatsApp...
-                        </motion.div>
-                      ) : isSubmitted ? (
-                        <motion.div
-                          className="flex items-center gap-2"
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                        >
-                          <CheckCircle className="w-5 h-5" />
-                          ¡Mensaje Enviado por WhatsApp!
-                        </motion.div>
-                      ) : (
-                        <>
-                          <Send className="w-5 h-5 mr-2" />
-                          Enviar Mensaje de WhatsApp
-                        </>
-                      )}
+                      <MessageCircle className="w-5 h-5 mr-2" />
+                      Enviar por WhatsApp
                     </Button>
                   </motion.div>
                 </form>
@@ -372,7 +351,14 @@ export default function ContactSection() {
           </div>
 
           <motion.div variants={itemVariants} className="text-center pt-16 border-t" style={{ borderColor: vibrantColors.coral }}>
-            <p style={{ color: vibrantColors.purple }}>© 2025 Maria Angelica Rodriguez Coto. Elaborado con pasión y precisión.</p>
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <img 
+                src="/logoYPerfil/Logo.svg" 
+                alt="Logo" 
+                className="w-8 h-8"
+              />
+              <p style={{ color: vibrantColors.purple }}>© 2025 Maria Angelica Rodriguez Coto. Elaborado con pasión y precisión.</p>
+            </div>
           </motion.div>
         </motion.div>
       </div>

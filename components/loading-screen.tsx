@@ -17,7 +17,11 @@ export default function LoadingScreen() {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 animate-gradient" />
+          <img 
+            src="/logoYPerfil/Logo.svg" 
+            alt="Logo Portafolio" 
+            className="w-20 h-20 mx-auto mb-4"
+          />
           <h1 className="text-2xl font-bold text-gray-800">Portfolio</h1>
         </motion.div>
 
