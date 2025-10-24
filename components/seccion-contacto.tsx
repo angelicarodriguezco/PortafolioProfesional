@@ -1,16 +1,8 @@
 "use client"
 
-import type React from "react"
-
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Mail, Phone, MapPin, Github, Linkedin, MessageCircle } from "lucide-react"
+import { Mail, MessageCircle, Github, Linkedin, Twitter, MapPin } from "lucide-react"
 
 export default function ContactSection() {
   const ref = useRef(null)
@@ -18,8 +10,7 @@ export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
-    message: "",
+    message: ""
   })
 
   const vibrantColors = {
@@ -29,64 +20,29 @@ export default function ContactSection() {
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     }))
   }
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const subject = encodeURIComponent(`Mensaje de ${formData.name}`)
+    const body = encodeURIComponent(`Nombre: ${formData.name}\nEmail: ${formData.email}\n\nMensaje:\n${formData.message}`)
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=mariaangelica@rodriguezcoto.com&su=${subject}&body=${body}`
+    window.open(gmailUrl, '_blank')
+  }
 
   const handleWhatsAppSubmit = () => {
-    const message = `Hola! Me interesa contactarte sobre tu portafolio.
-
-Nombre: ${formData.name}
-Email: ${formData.email}
-Asunto: ${formData.subject}
-Mensaje: ${formData.message}
-
-¡Espero tu respuesta!`
-    
+    const message = `Hola! Me interesa trabajar contigo. Mi nombre es ${formData.name} y mi email es ${formData.email}. ${formData.message}`
     const whatsappUrl = `https://wa.me/50670589304?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: "Correo",
-      value: "mariaangelica@rodriguezcoto.com",
-    },
-    {
-      icon: Phone,
-      label: "Teléfono",
-      value: "+506 7058 9304",
-    },
-    {
-      icon: MapPin,
-      label: "Ubicación",
-      value: "San Ramón, Costa Rica",
-    },
-  ]
-
   const socialLinks = [
-    {
-      icon: Github,
-      label: "GitHub",
-      href: "https://github.com/angelicarodriguezco",
-      color: "hover:text-gray-900",
-    },
-    {
-      icon: Linkedin,
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/in/maria-angelica-rodriguez-coto-209898385/",
-      color: "hover:text-blue-600",
-    },
-    {
-      icon: Mail,
-      label: "Email",
-      href: "https://mail.google.com/mail/?view=cm&fs=1&to=mariaangelica@rodriguezcoto.com",
-      color: "hover:text-green-600",
-    }
+    { icon: Github, href: "https://github.com/angelicarodriguezco", label: "GitHub" },
+    { icon: Linkedin, href: "https://linkedin.com/in/angelicarodriguezco", label: "LinkedIn" }
   ]
 
   const containerVariants = {
@@ -114,7 +70,7 @@ Mensaje: ${formData.message}
   }
 
   return (
-    <section id="contact" className="py-24 bg-white relative overflow-hidden">
+    <section id="contact" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl"
@@ -130,14 +86,31 @@ Mensaje: ${formData.message}
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 left-1/4 w-64 h-64 rounded-full blur-3xl"
+          className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl"
           style={{ backgroundColor: `${vibrantColors.coral}10` }}
           animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.7, 0.4],
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3],
           }}
           transition={{
-            duration: 10,
+            duration: 8,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl"
+          style={{ 
+            background: `linear-gradient(45deg, ${vibrantColors.purple}20, ${vibrantColors.coral}20, ${vibrantColors.orange}20)` 
+          }}
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3],
+            rotate: [0, 90, 180, 270, 360],
+          }}
+          transition={{
+            duration: 12,
             repeat: Number.POSITIVE_INFINITY,
             ease: "easeInOut",
           }}
@@ -153,196 +126,151 @@ Mensaje: ${formData.message}
           className="space-y-16"
         >
           <motion.div variants={itemVariants} className="text-center space-y-4">
-            <motion.div className="inline-block" whileHover={{ scale: 1.05 }}>
-              <Badge 
-                variant="outline" 
-                className="px-4 py-2 text-sm font-medium"
-                style={{ 
-                  borderColor: vibrantColors.coral,
-                  color: vibrantColors.purple,
-                  backgroundColor: `${vibrantColors.coral}15`
-                }}
-              >
-                Ponte en Contacto
-              </Badge>
-            </motion.div>
             <h2 
-              className="text-4xl md:text-6xl font-bold text-balance"
+              className="text-5xl md:text-7xl font-bold tracking-tight"
               style={{ 
-                background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.orange})`,
+                background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral}, ${vibrantColors.orange})`,
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text'
               }}
             >
-              Trabajemos Juntos
+              Contáctame
             </h2>
-            <p className="text-xl max-w-3xl mx-auto text-balance leading-relaxed" style={{ color: vibrantColors.purple }}>
-            ¿Listo para hacer realidad tus ideas? Siempre entusiasmada de hablar sobre nuevos proyectos y oportunidades. Creemos algo increíble juntos.            </p>
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: vibrantColors.purple }}>
+              Siempre entusiasmada de hablar sobre nuevos proyectos y oportunidades.
+            </p>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <motion.div variants={itemVariants}>
-              <Card 
-                className="p-8 bg-white border-2"
-                style={{ 
-                  borderColor: vibrantColors.coral,
-                  backgroundColor: `${vibrantColors.coral}05`
-                }}
-              >
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="name" className="font-medium" style={{ color: vibrantColors.purple }}>
-                        Nombre
-                      </Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="bg-white border-2 transition-colors focus:border-purple-600"
-                        style={{ 
-                          borderColor: vibrantColors.coral
-                        }}
-                        placeholder="Tu nombre completo"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email" className="font-medium" style={{ color: vibrantColors.purple }}>
-                        Email
-                      </Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="bg-white border-2 transition-colors focus:border-purple-600"
-                        style={{ 
-                          borderColor: vibrantColors.coral
-                        }}
-                        placeholder="tu.email@ejemplo.com"
-                      />
-                    </div>
-                  </div>
+            <motion.div variants={itemVariants} className="space-y-8">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold" style={{ color: vibrantColors.purple }}>Hablemos</h3>
+                <p className="leading-relaxed" style={{ color: vibrantColors.purple }}>
+                  Envíame un mensaje y hablemos sobre cómo podemos trabajar juntos.
+                </p>
+              </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="subject" className="font-medium" style={{ color: vibrantColors.purple }}>
-                      Asunto
-                    </Label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-white border-2 transition-colors focus:border-purple-600"
-                      style={{ 
-                        borderColor: vibrantColors.coral
-                      }}
-                      placeholder="¿De qué se trata?"
-                    />
-                  </div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-4">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Tu Nombre"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-lg transition-colors focus:outline-none focus:border-opacity-50"
+                    style={{ 
+                      backgroundColor: `${vibrantColors.purple}20`,
+                      borderColor: vibrantColors.purple,
+                      color: vibrantColors.purple,
+                      border: `1px solid ${vibrantColors.purple}`
+                    }}
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Tu Email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-lg transition-colors focus:outline-none focus:border-opacity-50"
+                    style={{ 
+                      backgroundColor: `${vibrantColors.purple}20`,
+                      borderColor: vibrantColors.purple,
+                      color: vibrantColors.purple,
+                      border: `1px solid ${vibrantColors.purple}`
+                    }}
+                    required
+                  />
+                  <textarea
+                    name="message"
+                    placeholder="Tu Mensaje"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows={5}
+                    className="w-full px-4 py-3 rounded-lg transition-colors resize-none focus:outline-none focus:border-opacity-50"
+                    style={{ 
+                      backgroundColor: `${vibrantColors.purple}20`,
+                      borderColor: vibrantColors.purple,
+                      color: vibrantColors.purple,
+                      border: `1px solid ${vibrantColors.purple}`
+                    }}
+                    required
+                  />
+                </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="font-medium" style={{ color: vibrantColors.purple }}>
-                      Mensaje
-                    </Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows={6}
-                      className="bg-white border-2 transition-colors resize-none focus:border-purple-600"
-                      style={{ 
-                        borderColor: vibrantColors.coral
-                      }}
-                      placeholder="Cuéntame sobre tu proyecto..."
-                    />
-                  </div>
-
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                    <Button
-                      type="button"
-                      onClick={handleWhatsAppSubmit}
-                      className="w-full py-6 text-lg font-semibold text-white transition-all duration-300"
-                      style={{ 
-                        background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})` 
-                      }}
-                    >
-                      <MessageCircle className="w-5 h-5 mr-2" />
-                      Enviar por WhatsApp
-                    </Button>
-                  </motion.div>
-                </form>
-              </Card>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <motion.button
+                    type="submit"
+                    className="flex-1 px-6 py-3 font-medium rounded-lg transition-colors relative overflow-hidden"
+                    style={{ 
+                      background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})`,
+                      color: 'white'
+                    }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Mail className="w-5 h-5 inline mr-2" />
+                    Enviar Email
+                  </motion.button>
+                  
+                  <motion.button
+                    type="button"
+                    onClick={handleWhatsAppSubmit}
+                    className="flex-1 px-6 py-3 font-medium rounded-lg transition-colors relative overflow-hidden"
+                    style={{ 
+                      background: `linear-gradient(135deg, ${vibrantColors.coral}, ${vibrantColors.orange})`,
+                      color: 'white'
+                    }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <MessageCircle className="w-5 h-5 inline mr-2" />
+                    WhatsApp
+                  </motion.button>
+                </div>
+              </form>
             </motion.div>
 
             <motion.div variants={itemVariants} className="space-y-8">
               <div className="space-y-6">
-                <h3 className="text-2xl font-semibold" style={{ color: vibrantColors.purple }}>Información de Contacto</h3>
-                <p className="leading-relaxed" style={{ color: vibrantColors.purple }}>
-                Si quieres hablar sobre un proyecto o simplemente saludarme, siempre estoy dispuesta a hablar. No dudes en contactarme a través de cualquiera de los canales a continuación.                </p>
+                <h3 className="text-2xl font-bold" style={{ color: vibrantColors.purple }}>Ponte en Contacto</h3>
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4 p-4 rounded-lg" style={{ backgroundColor: `${vibrantColors.purple}10` }}>
+                    <Mail className="w-5 h-5" style={{ color: vibrantColors.coral }} />
+                    <span style={{ color: vibrantColors.purple }}>mariaangelica@rodriguezcoto.com</span>
+                  </div>
+                  <div className="flex items-center space-x-4 p-4 rounded-lg" style={{ backgroundColor: `${vibrantColors.purple}10` }}>
+                    <MessageCircle className="w-5 h-5" style={{ color: vibrantColors.coral }} />
+                    <span style={{ color: vibrantColors.purple }}>+506 7058 9304</span>
+                  </div>
+                  <div className="flex items-center space-x-4 p-4 rounded-lg" style={{ backgroundColor: `${vibrantColors.purple}10` }}>
+                    <MapPin className="w-5 h-5" style={{ color: vibrantColors.coral }} />
+                    <span style={{ color: vibrantColors.purple }}>Costa Rica</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="space-y-4">
-                {contactInfo.map((info, index) => (
-                  <motion.div
-                    key={info.label}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-white border-2 transition-all duration-300 group"
-                    style={{ 
-                      borderColor: vibrantColors.coral,
-                      backgroundColor: `${vibrantColors.coral}05`
-                    }}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                    transition={{ delay: index * 0.1 + 0.5 }}
-                  >
-                    <div 
-                      className="w-12 h-12 rounded-lg flex items-center justify-center transition-colors"
-                      style={{ 
-                        backgroundColor: `${vibrantColors.purple}20`
-                      }}
-                    >
-                      <info.icon className="w-6 h-6" style={{ color: vibrantColors.purple }} />
-                    </div>
-                    <div>
-                      <div className="font-medium transition-colors" style={{ color: vibrantColors.purple }}>
-                        {info.label}
-                      </div>
-                      <div className="text-sm" style={{ color: vibrantColors.coral }}>{info.value}</div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="space-y-4 pt-8 border-t" style={{ borderColor: vibrantColors.coral }}>
-                <h4 className="text-lg font-semibold" style={{ color: vibrantColors.purple }}>Sígueme</h4>
-                <div className="flex gap-4">
-                  {socialLinks.map((social, index) => (
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold" style={{ color: vibrantColors.purple }}>Sígueme</h3>
+                <div className="flex flex-wrap gap-4">
+                  {socialLinks.map((social) => (
                     <motion.a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                      className="p-3 rounded-lg transition-all duration-300"
                       style={{ 
-                        backgroundColor: `${vibrantColors.coral}20`,
-                        color: vibrantColors.purple
+                        backgroundColor: `${vibrantColors.purple}20`,
+                        borderColor: vibrantColors.purple,
+                        border: `1px solid ${vibrantColors.purple}`
                       }}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      whileTap={{ scale: 0.9 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                      transition={{ delay: index * 0.1 + 0.8 }}
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      <social.icon className="w-5 h-5" />
-                      <span className="sr-only">{social.label}</span>
+                      <social.icon className="w-6 h-6" style={{ color: vibrantColors.coral }} />
                     </motion.a>
                   ))}
                 </div>
@@ -350,7 +278,8 @@ Mensaje: ${formData.message}
             </motion.div>
           </div>
 
-          <motion.div variants={itemVariants} className="text-center pt-16 border-t" style={{ borderColor: vibrantColors.coral }}>
+          <motion.div variants={itemVariants} className="text-center pt-16">
+            <div className="w-full border-t mb-8" style={{ borderColor: vibrantColors.coral }}></div>
             <div className="flex items-center justify-center gap-4 mb-4">
               <img 
                 src="/logoYPerfil/Logo.svg" 
@@ -360,8 +289,9 @@ Mensaje: ${formData.message}
               <p style={{ color: vibrantColors.purple }}>© 2025 Maria Angelica Rodriguez Coto. Elaborado con pasión y precisión.</p>
             </div>
           </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
+          </motion.div>
+        </div>
+      </section>
+    )
+  }
+

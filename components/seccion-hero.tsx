@@ -69,7 +69,7 @@ export default function HeroSection() {
     <section
       id="hero"
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -107,15 +107,15 @@ export default function HeroSection() {
         <motion.div
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl"
           style={{ 
-            background: `linear-gradient(45deg, ${vibrantColors.purple}10, ${vibrantColors.coral}10, ${vibrantColors.orange}10)` 
+            background: `linear-gradient(45deg, ${vibrantColors.purple}20, ${vibrantColors.coral}20, ${vibrantColors.orange}20)` 
           }}
           animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.2, 0.4, 0.2],
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3],
             rotate: [0, 90, 180, 270, 360],
           }}
           transition={{
-            duration: 15,
+            duration: 12,
             repeat: Number.POSITIVE_INFINITY,
             ease: "easeInOut",
           }}
@@ -260,9 +260,9 @@ export default function HeroSection() {
               className="flex-1 text-center lg:text-left order-2 lg:order-2 space-y-6"
             >
               <motion.h1
-                className="text-5xl lg:text-7xl font-bold text-balance leading-tight"
+                className="text-5xl lg:text-7xl font-bold tracking-tight"
                 style={{ 
-                  background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.orange})`,
+                  background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral}, ${vibrantColors.orange})`,
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text'
@@ -327,7 +327,7 @@ export default function HeroSection() {
                 >
                   <Button 
                     size="lg" 
-                    className="group relative overflow-hidden text-white border-0 px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-xl"
+                    className="group relative overflow-hidden text-white border-0 px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/25"
                     style={{ 
                       background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})` 
                     }}

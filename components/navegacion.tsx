@@ -18,10 +18,10 @@ export default function Navigation({ currentSection }: NavigationProps) {
 
   const navItems = [
     { id: "hero", label: "Inicio" },
-    { id: "about", label: "Acerca de" },
-    { id: "skills", label: "Habilidades" },
-    { id: "gallery", label: "Proyectos" },
-    { id: "contact", label: "Contacto" },
+    { id: "about", label: "Sobre Mí" },
+    { id: "skills", label: "Habilidades Técnicas" },
+    { id: "gallery", label: "Trabajos Seleccionados" },
+    { id: "contact", label: "Contáctame" },
   ]
 
   const scrollToSection = (sectionId: string) => {

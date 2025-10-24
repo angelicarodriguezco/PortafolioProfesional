@@ -64,7 +64,7 @@ export default function AboutSection() {
   ]
 
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="about" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           ref={ref}
@@ -74,29 +74,16 @@ export default function AboutSection() {
           className="space-y-16"
         >
           <motion.div variants={itemVariants} className="text-center space-y-4">
-            <motion.div className="inline-block" whileHover={{ scale: 1.05 }}>
-              <Badge 
-                variant="outline" 
-                className="px-4 py-2 text-sm font-medium"
-                style={{ 
-                  borderColor: vibrantColors.coral,
-                  color: vibrantColors.purple,
-                  backgroundColor: `${vibrantColors.coral}15`
-                }}
-              >
-                Sobre Mí
-              </Badge>
-            </motion.div>
             <h2 
-              className="text-4xl md:text-6xl font-bold text-balance"
+              className="text-5xl md:text-7xl font-bold tracking-tight"
               style={{ 
-                background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.orange})`,
+                background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral}, ${vibrantColors.orange})`,
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text'
               }}
             >
-              Creando Excelencia Digital
+              Sobre Mí
             </h2>
           </motion.div>
 
