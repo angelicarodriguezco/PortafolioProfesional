@@ -55,17 +55,27 @@ export default function GallerySection() {
       title: "Pokémon Fight",
       description: "Sistema de Batallas Pokémon",
       longDescription:
-        "Aplicación web de batallas Pokémon donde los usuarios pueden crear equipos de Pokémon, desafiar a amigos y participar en combates estratégicos. El sistema incluye gestión de usuarios, creación de equipos personalizados, sistema de batallas por turnos, historial de partidas, tabla de liderazgo y sistema de amigos. Los usuarios pueden registrarse, crear múltiples equipos con diferentes Pokémon, desafiar a otros jugadores y seguir su progreso a través de estadísticas detalladas.",
-      image: "/FotoPokemonFight.png",
+        "Aplicación web de batallas Pokémon donde los usuarios pueden crear equipos de Pokémon, desafiar a amigos y participar en combates estratégicos. \n" +
+        "El sistema incluye gestión de usuarios, creación de equipos personalizados, sistema de batallas por turnos, historial de partidas, tabla de liderazgo y sistema de amigos. \n" +
+        "Los usuarios pueden registrarse, crear múltiples equipos con diferentes Pokémon, desafiar a otros jugadores y seguir su progreso a través de estadísticas detalladas.",
+      image: "GifsFotosPokemonFight/FotoPokemonFight.png",
       category: "Aplicación Web",
       technologies: ["Node.js", "Express.js", "MongoDB", "HTML", "CSS", "JavaScript"],
       githubUrl: "https://github.com/ECF2001/Pokemon-Fight",
       featured: true,
       media: [
-        { type: 'image', src: '/FotoPokemonFight.png', alt: 'Pokémon Fight - Pantalla principal' },
-        { type: 'gif', src: '/pokemon-battle.gif', alt: 'Pokémon Fight - Batalla en acción' },
-        { type: 'image', src: '/pokemon-team.png', alt: 'Pokémon Fight - Creación de equipos' },
-        { type: 'video', src: '/pokemon-demo.mp4', alt: 'Pokémon Fight - Demo completo' }
+        { type: 'image', src: '/GifsFotosPokemonFight/PaginaPrincipal.png', alt: 'Pokémon Fight - Página Principal' },
+        { type: 'gif', src: '/GifsFotosPokemonFight/PaginaEstadisticas.gif', alt: 'Pokémon Fight - Página Estadísticas' },
+        { type: 'gif', src: '/GifsFotosPokemonFight/PaginaBatalla2.gif', alt: 'Pokémon Fight - Página Batalla 2' },
+        { type: 'gif', src: '/GifsFotosPokemonFight/PaginaBatalla1.gif', alt: 'Pokémon Fight - Página Batalla 1' },
+        { type: 'image', src: '/GifsFotosPokemonFight/PaginaJugarPartida.png', alt: 'Pokémon Fight - Página Jugar Partida' },
+        { type: 'gif', src: '/GifsFotosPokemonFight/PaginaCrearEquipo.gif', alt: 'Pokémon Fight - Página Crear Equipo' },
+        { type: 'gif', src: '/GifsFotosPokemonFight/PaginaEquipos.gif', alt: 'Pokémon Fight - Página Equipos' },
+        { type: 'gif', src: '/GifsFotosPokemonFight/PaginaPerfil.gif', alt: 'Pokémon Fight - Página Perfil' },
+        { type: 'gif', src: '/GifsFotosPokemonFight/PaginaSobreNosotros.gif', alt: 'Pokémon Fight - Página Sobre Nosotros' },
+        { type: 'gif', src: '/GifsFotosPokemonFight/PaginaSobreProducto.gif', alt: 'Pokémon Fight - Página Sobre Producto' },
+        { type: 'gif', src: '/GifsFotosPokemonFight/PaginaRegistro.gif', alt: 'Pokémon Fight - Página Registro' },
+        { type: 'gif', src: '/GifsFotosPokemonFight/PaginaInicioSesion.gif', alt: 'Pokémon Fight - Página Inicio Sesión' }
       ]
     },
     {
@@ -74,16 +84,24 @@ export default function GallerySection() {
       description: "Plataforma de Inversión en Bolsa de Valores",
       longDescription:
         "Wealthify es una plataforma web integral de inversión en bolsa de valores que conecta asesores financieros con inversionistas. La aplicación permite a los usuarios registrarse como asesores o clientes, gestionar portafolios de inversión, visualizar datos de mercado en tiempo real, realizar compras y ventas de acciones con PayPal, y generar reportes financieros detallados.",
-      image: "/FotoWealthify.png",
+      image: "GifsFotosWealthify/FotoWealthify.png",
       category: "Aplicación Web",
       technologies: ["C#", "ASP.NET", "Entity Framework", "SQL Server", "HTML", "CSS", "JavaScript", "Cloudinary", "Yahoo Finance API", "PayPal API"],
       githubUrl: "https://github.com/angelicarodriguezco/Proyecto2Grupo3",
       featured: false,
       media: [
-        { type: 'image', src: '/FotoWealthify.png', alt: 'Wealthify - Dashboard principal' },
-        { type: 'gif', src: '/wealthify-trading.gif', alt: 'Wealthify - Proceso de trading' },
-        { type: 'image', src: '/wealthify-portfolio.png', alt: 'Wealthify - Gestión de portafolio' },
-        { type: 'video', src: '/wealthify-demo.mp4', alt: 'Wealthify - Demo completo' }
+        { type: 'image', src: '/GifsFotosWealthify/PaginaCompraVentaAcciones.gif', alt: 'Wealthify - Página Compra y Venta de Acciones' },
+        { type: 'image', src: '/GifsFotosWealthify/PaginaDashboardFinanciero.gif', alt: 'Wealthify - Página Dashboard Financiero' },
+        { type: 'image', src: '/GifsFotosWealthify/PaginaGestionUsuarioComisiones.gif', alt: 'Wealthify - Página Gestión de Usuario y Comisiones' },
+        { type: 'image', src: '/GifsFotosWealthify/PaginaInicioSesion.png', alt: 'Wealthify - Página Inicio de Sesión' },
+        { type: 'image', src: '/GifsFotosWealthify/PaginaLanding.gif', alt: 'Wealthify - Página Landing Page' },
+        { type: 'image', src: '/GifsFotosWealthify/PaginaLanding2.gif', alt: 'Wealthify - Página Landing Page 2' },
+        { type: 'image', src: '/GifsFotosWealthify/PaginaLogOut.png', alt: 'Wealthify - Página Cerrar Sesión' },
+        { type: 'image', src: '/GifsFotosWealthify/PaginaPayPal.gif', alt: 'Wealthify - Página PayPal' },
+        { type: 'image', src: '/GifsFotosWealthify/PaginaPerfil.gif', alt: 'Wealthify - Página Perfil' },
+        { type: 'image', src: '/GifsFotosWealthify/PaginaPrincipal.gif', alt: 'Wealthify - Página Principal' },
+        { type: 'image', src: '/GifsFotosWealthify/PaginaRegistro.gif', alt: 'Wealthify - Página Registro' },
+        { type: 'image', src: '/GifsFotosWealthify/PaginaSolicitudes.gif', alt: 'Wealthify - Página Solicitudes' }
       ]
     },
     {
@@ -92,15 +110,18 @@ export default function GallerySection() {
       description: "Buscador y gestor de imágenes favoritas de Flickr",
       longDescription:
         "FlickrFavorites es una aplicación web que permite a los usuarios buscar imágenes de Flickr, marcarlas como favoritas y gestionar su colección personal de imágenes favoritas. La aplicación incluye una galería de búsqueda de imágenes, y un panel de gestión de favoritos donde los usuarios pueden editar títulos de sus imágenes guardadas.",
-      image: "/FotoFlickrFavorites.png",
+      image: "GifsFotosFlickrFavorites/FotoFlickrFavorites.png",
       category: "Aplicación Web",
       technologies: ["React", "Node.js", "MongoDB", "Jest", "Flickr API"],
       githubUrl: "https://github.com/angelicarodriguezco/FlickrFavorites",
       featured: true,
       media: [
-        { type: 'image', src: '/FotoFlickrFavorites.png', alt: 'Flickr Favorites - Búsqueda de imágenes' },
-        { type: 'gif', src: '/flickr-search.gif', alt: 'Flickr Favorites - Búsqueda en tiempo real' },
-        { type: 'image', src: '/flickr-favorites.png', alt: 'Flickr Favorites - Panel de favoritos' }
+        { type: 'image', src: '/GifsFotosFlickrFavorites/PaginaFavoritos.png', alt: 'Flickr Favorites - Página Favoritos' },
+        { type: 'image', src: '/GifsFotosFlickrFavorites/PaginaGaleria.gif', alt: 'Flickr Favorites - Página Galeria' },
+        { type: 'image', src: '/GifsFotosFlickrFavorites/PaginaInicio.gif', alt: 'Flickr Favorites - Página Inicio' },
+        { type: 'image', src: '/GifsFotosFlickrFavorites/PaginaLogin.png', alt: 'Flickr Favorites - Página Login' },
+        { type: 'image', src: '/GifsFotosFlickrFavorites/PaginaPerfil.png', alt: 'Flickr Favorites - Página Perfil' },
+        { type: 'image', src: '/GifsFotosFlickrFavorites/PaginaRegistro.png', alt: 'Flickr Favorites - Página Registro' }
       ]
     },
     {
@@ -109,16 +130,19 @@ export default function GallerySection() {
       description: "Gestor de recetas con planificación de menús y listas de compras",
       longDescription:
         "MiRecetario es una aplicación diseñada para facilitar la gestión de recetas, la planificación de menús semanales y la organización de listas de compras. La idea principal del proyecto es ofrecer una plataforma donde los usuarios puedan crear, editar y clasificar sus recetas, asignarlas a un plan de comidas semanal y generar una lista de ingredientes por comprar para sus recetas.",
-      image: "/FotoMiRecetario.png",
+      image: "GifsFotosMiRecetario/FotoMiRecetario.png",
       category: "Aplicación Web",
       technologies: ["Java", "TypeScript", "React", "MySQL", "Spring Boot", "Node.js"],
       githubUrl: "https://github.com/angelicarodriguezco/MiRecetario",
       featured: false,
       media: [
-        { type: 'image', src: '/FotoMiRecetario.png', alt: 'MiRecetario - Dashboard principal' },
-        { type: 'gif', src: '/recetario-cooking.gif', alt: 'MiRecetario - Proceso de cocina' },
-        { type: 'image', src: '/recetario-menu.png', alt: 'MiRecetario - Planificación de menús' },
-        { type: 'video', src: '/recetario-demo.mp4', alt: 'MiRecetario - Demo completo' }
+        { type: 'image', src: '/GifsFotosMiRecetario/PaginaCategoriasEtiquetas.gif', alt: 'MiRecetario - Página Categorias y Etiquetas' },
+        { type: 'image', src: '/GifsFotosMiRecetario/PaginaListaCompras.png', alt: 'MiRecetario - Página Lista de Compras' },
+        { type: 'image', src: '/GifsFotosMiRecetario/PaginaLogIn.png', alt: 'MiRecetario - Página Inicio de Sesión' },
+        { type: 'image', src: '/GifsFotosMiRecetario/PaginaMenuSemanal.gif', alt: 'MiRecetario - Página Menu Semanal' },
+        { type: 'image', src: '/GifsFotosMiRecetario/PaginaMisRecetas.gif', alt: 'MiRecetario - Página Mis Recetas' },
+        { type: 'image', src: '/GifsFotosMiRecetario/PaginaPerfil.png', alt: 'MiRecetario - Página Perfil' },
+        { type: 'image', src: '/GifsFotosMiRecetario/PaginaRegistro.png', alt: 'MiRecetario - Página Registro de Usuario' }
       ]
     }
   ]
@@ -404,7 +428,6 @@ export default function GallerySection() {
         )}
       </AnimatePresence>
 
-      {/* Project Modal - Shelby Kay Style */}
       <AnimatePresence>
         {selectedProjectShelby !== null && (
           <motion.div
@@ -414,27 +437,30 @@ export default function GallerySection() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            {/* Semi-transparent Background - Shelby Kay Style */}
             <motion.div
               className="absolute inset-0 backdrop-blur-md"
-              style={{ backgroundColor: '#eee5d780' }} // Exact Shelby Kay color
+              style={{ backgroundColor: '#00000080' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedProjectShelby(null)}
             />
 
-            {/* Modal Content - Shelby Kay Style */}
             <motion.div
-              className="relative w-full h-[calc(100vh-32px)] bg-[#aea098eb] overflow-y-auto"
+              className="relative w-full h-[calc(100vh-32px)] overflow-y-auto"
+              style={{
+                backgroundImage: 'url(/FondoModal.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ delay: 0.1, duration: 0.4 }}
             >
-              {/* Close Button */}
               <motion.button
-                className="fixed top-0 right-0 z-10 text-black text-xs font-medium hover:text-black/70 transition-colors uppercase h-8 px-4 flex items-center"
+                className="fixed top-0 right-0 z-10 text-[#000000] text-sm font-semibold hover:text-[#000000]/70 transition-colors uppercase h-8 px-4 flex items-center"
                 onClick={() => setSelectedProjectShelby(null)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -443,15 +469,13 @@ export default function GallerySection() {
               </motion.button>
 
               <div className="grid grid-cols-24 h-full">
-                {/* Left Panel - Carousel (16 columns) */}
                 <motion.div
-                  className="col-span-16 flex flex-col gap-6 px-4 py-8 overflow-y-auto scrollbar-hide"
+                  className="col-span-14 flex flex-col gap-6 px-4 py-8 overflow-y-auto scrollbar-hide"
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: -50, opacity: 0 }}
                   transition={{ delay: 0.2, duration: 0.4 }}
                 >
-                  {/* Carousel Container - Shelby Kay Style */}
                   {selectedProjectShelby?.media?.map((media, index) => (
                     <div key={index} className="w-full max-w-[1200px] mx-auto">
                       {media.type === 'video' ? (
@@ -476,9 +500,8 @@ export default function GallerySection() {
                   ))}
                 </motion.div>
 
-                {/* Right Panel - Project Details (8 columns) */}
                 <motion.div
-                  className="col-span-8 px-10 py-40 flex flex-col justify-center"
+                  className="col-span-10 px-12 py-40 flex flex-col justify-center"
                   initial={{ x: 50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: 50, opacity: 0 }}
@@ -486,28 +509,37 @@ export default function GallerySection() {
                 >
                   <div className="space-y-8">
                     <div>
-                      <h2 className="text-5xl font-bold text-[#393c2a] mb-4">
+                      <h2 className="text-5xl font-bold text-[#000000] mb-4">
                         {selectedProjectShelby?.title}
                       </h2>
-                      <p className="text-sm text-[#393c2a] leading-relaxed mb-4">
+                      <p className="text-base text-[#000000] leading-relaxed mb-4">
                         {selectedProjectShelby?.description}
                       </p>
-                      <span className="text-xs text-[#393c2a]">
+                      <span className="text-sm text-[#000000]">
                         2024
                       </span>
                     </div>
 
                     <div className="space-y-6">
                       <div className="grid grid-cols-9 gap-4">
-                        <p className="text-xs font-semibold text-[#393c2a] uppercase col-span-3">STACK</p>
-                        <p className="text-xs text-[#393c2a] col-span-6">
-                          {selectedProjectShelby?.technologies.join(', ')}
+                        <p className="text-sm font-semibold text-[#000000] uppercase col-span-3">CATEGORÍA</p>
+                        <p className="text-sm text-[#000000] col-span-6">
+                          {selectedProjectShelby?.category}
                         </p>
                       </div>
 
                       <div className="grid grid-cols-9 gap-4">
-                        <p className="text-xs font-semibold text-[#393c2a] uppercase col-span-3">CREDITS</p>
-                        <p className="text-xs text-[#393c2a] col-span-6">Studio: Angélica Rodríguez</p>
+                        <p className="text-sm font-semibold text-[#000000] uppercase col-span-3">DESCRIPCIÓN</p>
+                        <p className="text-base text-[#000000] col-span-6 leading-relaxed">
+                          {selectedProjectShelby?.longDescription}
+                        </p>
+                      </div>
+
+                      <div className="grid grid-cols-9 gap-4">
+                        <p className="text-sm font-semibold text-[#000000] uppercase col-span-3">TECNOLOGÍAS USADAS</p>
+                        <p className="text-sm text-[#000000] col-span-6">
+                          {selectedProjectShelby?.technologies.join(', ')}
+                        </p>
                       </div>
 
                       <div className="pt-4">
@@ -515,10 +547,10 @@ export default function GallerySection() {
                           href={selectedProjectShelby?.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center text-xs font-semibold text-[#393c2a] hover:text-[#393c2a]/70 transition-colors uppercase gap-2"
+                          className="inline-flex items-center text-sm font-semibold text-[#000000] hover:text-[#000000]/70 transition-colors uppercase gap-2"
                         >
                           <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 -3.93402e-07V9L7.2002 9V3.07324L1.27441 8.99805L0.00195313 7.72559L5.92676 1.7998L0 1.7998L0 0L9 -3.93402e-07Z" fill="#393C2A"></path>
+                            <path d="M9 -3.93402e-07V9L7.2002 9V3.07324L1.27441 8.99805L0.00195313 7.72559L5.92676 1.7998L0 1.7998L0 0L9 -3.93402e-07Z" fill="#000000"></path>
                           </svg>
                           VISIT
                         </a>
