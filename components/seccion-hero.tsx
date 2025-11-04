@@ -4,44 +4,47 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { useEffect, useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Download, Github, Linkedin, Mail } from "lucide-react"
+import { usarIdioma } from "@/contexts/language-context"
 
-export default function HeroSection() {
-  const [displayText, setDisplayText] = useState("")
-  const [currentIndex, setCurrentIndex] = useState(0)
+export default function SeccionHero() {
+  const { traducir, idioma } = usarIdioma()
+  const [textoMostrado, establecerTextoMostrado] = useState("")
+  const [indiceActual, establecerIndiceActual] = useState(0)
+  
+  const textoCompleto = traducir("hero.subtitle")
   
   useEffect(() => {
-    setDisplayText("")
-    setCurrentIndex(0)
-  }, [])
-  const fullText = "Desarrolladora Full Stack"
-  const containerRef = useRef<HTMLDivElement>(null)
+    establecerTextoMostrado("")
+    establecerIndiceActual(0)
+  }, [idioma, textoCompleto])
+  const referenciaContenedor = useRef<HTMLDivElement>(null)
 
-  const vibrantColors = {
-    purple: "#3e196e",
+  const coloresVibrantes = {
+    morado: "#3e196e",
     coral: "#d46c76",
-    orange: "#ffc07c"
+    naranja: "#ffc07c"
   }
 
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: referenciaContenedor,
     offset: ["start start", "end start"],
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, -200])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  const desplazamientoY = useTransform(scrollYProgress, [0, 1], [0, -200])
+  const opacidad = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
   useEffect(() => {
-    if (currentIndex < fullText.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText((prev) => prev + fullText[currentIndex])
-        setCurrentIndex((prev) => prev + 1)
+    if (indiceActual < textoCompleto.length) {
+      const temporizador = setTimeout(() => {
+        establecerTextoMostrado((prev) => prev + textoCompleto[indiceActual])
+        establecerIndiceActual((prev) => prev + 1)
       }, 100)
-      return () => clearTimeout(timeout)
+      return () => clearTimeout(temporizador)
     }
-  }, [currentIndex, fullText])
+  }, [indiceActual, textoCompleto])
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
+  const variantesContenedor = {
+    oculto: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
@@ -51,8 +54,8 @@ export default function HeroSection() {
     },
   }
 
-  const itemVariants = {
-    hidden: { y: 100, opacity: 0 },
+  const variantesItem = {
+    oculto: { y: 100, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
@@ -68,14 +71,14 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      ref={containerRef}
+      ref={referenciaContenedor}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl"
           style={{ 
-            background: `linear-gradient(45deg, ${vibrantColors.purple}15, ${vibrantColors.coral}15)` 
+            background: `linear-gradient(45deg, ${coloresVibrantes.morado}15, ${coloresVibrantes.coral}15)` 
           }}
           animate={{
             scale: [1, 1.2, 1],
@@ -91,7 +94,7 @@ export default function HeroSection() {
         <motion.div
           className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl"
           style={{ 
-            background: `linear-gradient(45deg, ${vibrantColors.coral}15, ${vibrantColors.orange}15)` 
+            background: `linear-gradient(45deg, ${coloresVibrantes.coral}15, ${coloresVibrantes.naranja}15)` 
           }}
           animate={{
             scale: [1.2, 1, 1.2],
@@ -107,7 +110,7 @@ export default function HeroSection() {
         <motion.div
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl"
           style={{ 
-            background: `linear-gradient(45deg, ${vibrantColors.purple}20, ${vibrantColors.coral}20, ${vibrantColors.orange}20)` 
+            background: `linear-gradient(45deg, ${coloresVibrantes.morado}20, ${coloresVibrantes.coral}20, ${coloresVibrantes.naranja}20)` 
           }}
           animate={{
             scale: [1, 1.2, 1],
@@ -122,37 +125,37 @@ export default function HeroSection() {
         />
       </div>
 
-      <motion.div style={{ y, opacity }} className="relative z-10 max-w-7xl mx-auto px-6">
-        <motion.div variants={containerVariants} initial="hidden" animate="visible">
+      <motion.div style={{ y: desplazamientoY, opacity: opacidad }} className="relative z-10 max-w-7xl mx-auto px-6">
+        <motion.div variants={variantesContenedor} initial="oculto" animate="visible">
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
             
             <motion.div 
-              variants={itemVariants} 
+              variants={variantesItem} 
               className="flex-shrink-0 order-1 lg:order-1"
             >
               <div className="relative w-80 h-96 lg:w-96 lg:h-[28rem]">
-                <motion.div 
+              <motion.div 
                   className="absolute -top-4 -right-4 w-8 h-8 bg-purple-200 rounded-full"
-                  animate={{
+                    animate={{
                     opacity: [0.6, 0.2, 0.6],
-                    scale: [1, 1.2, 1],
+                      scale: [1, 1.2, 1],
                     y: [0, -10, 0],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "easeInOut",
-                  }}
-                />
-                <motion.div 
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "easeInOut",
+                    }}
+                  />
+                  <motion.div
                   className="absolute -bottom-4 -left-4 w-6 h-6 bg-coral-200 rounded-full"
-                  animate={{
+                    animate={{
                     opacity: [0.6, 0.1, 0.6],
-                    scale: [1, 1.3, 1],
+                      scale: [1, 1.3, 1],
                     x: [0, 10, 0],
-                  }}
-                  transition={{
-                    duration: 4,
+                    }}
+                    transition={{
+                      duration: 4,
                     repeat: Number.POSITIVE_INFINITY,
                     ease: "easeInOut",
                     delay: 0.5,
@@ -168,11 +171,11 @@ export default function HeroSection() {
                   }}
                   transition={{
                     duration: 5,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "easeInOut",
-                    delay: 1,
-                  }}
-                />
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "easeInOut",
+                      delay: 1,
+                    }}
+                  />
                 <motion.div 
                   className="absolute top-1/4 -right-8 w-3 h-3 bg-purple-300 rounded-full"
                   animate={{
@@ -252,17 +255,17 @@ export default function HeroSection() {
                     clipPath: 'polygon(0 0, 100% 0, 100% 80%, 98% 85%, 95% 88%, 90% 90%, 85% 92%, 80% 93%, 70% 94%, 60% 93%, 50% 92%, 40% 90%, 30% 88%, 20% 85%, 10% 82%, 0 80%)'
                   }}
                 />
-              </div>
+                </div>
             </motion.div>
 
             <motion.div 
-              variants={itemVariants} 
+              variants={variantesItem} 
               className="flex-1 text-center lg:text-left order-2 lg:order-2 space-y-6"
             >
               <motion.h1
-                className="text-5xl lg:text-7xl font-bold tracking-tight leading-tight pb-2"
+                className="text-5xl lg:text-7xl font-bold tracking-tight leading-tight pb-2 whitespace-nowrap"
                 style={{ 
-                  background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral}, ${vibrantColors.orange})`,
+                  background: `linear-gradient(135deg, ${coloresVibrantes.morado}, ${coloresVibrantes.coral}, ${coloresVibrantes.naranja})`,
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -277,27 +280,27 @@ export default function HeroSection() {
                   delay: 0.5,
                 }}
               >
-                Angélica Rodríguez
+                María Angélica Rodríguez Coto
               </motion.h1>
 
               <motion.div
                 className="text-xl lg:text-2xl font-medium h-8 lg:h-10 flex items-center justify-center lg:justify-start"
-                variants={itemVariants}
+                variants={variantesItem}
               >
                 <span 
                   style={{ 
-                    background: `linear-gradient(135deg, ${vibrantColors.coral}, ${vibrantColors.orange})`,
+                    background: `linear-gradient(135deg, ${coloresVibrantes.coral}, ${coloresVibrantes.naranja})`,
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text'
                   }}
                 >
-                  {displayText}
+                  {textoMostrado}
                 </span>
                 <motion.span
                   className="ml-1"
                   style={{ 
-                    background: `linear-gradient(135deg, ${vibrantColors.coral}, ${vibrantColors.orange})`,
+                    background: `linear-gradient(135deg, ${coloresVibrantes.coral}, ${coloresVibrantes.naranja})`,
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text'
@@ -311,15 +314,14 @@ export default function HeroSection() {
 
               <motion.p
                 className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0"
-                style={{ color: vibrantColors.purple }}
-                variants={itemVariants}
+                style={{ color: coloresVibrantes.morado }}
+                variants={variantesItem}
               >
-                Desarrolladora Full Stack especializada en crear aplicaciones y soluciones web modernas y escalables. Experiencia en frontend (React, JavaScript, HTML, CSS), backend (Python, Node.js, Java) y bases de datos (MySQL, MongoDB, PostgreSQL).
-
+                {traducir("hero.description")}
               </motion.p>
 
               <motion.div 
-                variants={itemVariants}
+                variants={variantesItem}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
               >
                 <motion.div
@@ -330,24 +332,24 @@ export default function HeroSection() {
                     size="lg" 
                     className="group relative overflow-hidden text-white border-0 px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/25"
                     style={{ 
-                      background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})` 
+                      background: `linear-gradient(135deg, ${coloresVibrantes.morado}, ${coloresVibrantes.coral})` 
                     }}
                     asChild
                   >
-                    <a href="/CV" download="CV-Angélica-Rodríguez.pdf">
+                    <a href={idioma === "es" ? "/CV/CV-Angelica-Rodriguez-ES.pdf" : "/CV/CV-Angelica-Rodriguez-EN.pdf"} download={idioma === "es" ? "CV-Angélica-Rodríguez-ES.pdf" : "CV-Angélica-Rodríguez-EN.pdf"}>
                       <span className="relative z-10 flex items-center gap-2">
                         <Download className="w-5 h-5" />
-                        Descargar CV
+                        {traducir("hero.downloadCV")}
                       </span>
-                      <motion.div
-                        className="absolute inset-0"
-                        style={{ 
-                          background: `linear-gradient(135deg, ${vibrantColors.coral}, ${vibrantColors.orange})` 
-                        }}
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
-                      />
+                    <motion.div
+                      className="absolute inset-0"
+                      style={{ 
+                        background: `linear-gradient(135deg, ${coloresVibrantes.coral}, ${coloresVibrantes.naranja})` 
+                      }}
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
                     </a>
                   </Button>
                 </motion.div>
@@ -360,7 +362,7 @@ export default function HeroSection() {
               </motion.div>
 
               <motion.div 
-                variants={itemVariants}
+                variants={variantesItem}
                 className="flex justify-center lg:justify-start gap-4 pt-4"
               >
                 <motion.div
@@ -372,13 +374,13 @@ export default function HeroSection() {
                     size="lg"
                     className="w-12 h-12 rounded-full transition-all duration-300"
                     style={{ 
-                      background: `linear-gradient(135deg, ${vibrantColors.purple}20, ${vibrantColors.coral}20)`,
-                      color: vibrantColors.purple
+                      background: `linear-gradient(135deg, ${coloresVibrantes.morado}20, ${coloresVibrantes.coral}20)`,
+                      color: coloresVibrantes.morado
                     }}
                     asChild
                   >
                     <a href="https://github.com/angelicarodriguezco" target="_blank" rel="noopener noreferrer">
-                      <Github className="w-6 h-6" />
+                    <Github className="w-6 h-6" />
                     </a>
                   </Button>
                 </motion.div>
@@ -391,13 +393,13 @@ export default function HeroSection() {
                     size="lg"
                     className="w-12 h-12 rounded-full transition-all duration-300"
                     style={{ 
-                      background: `linear-gradient(135deg, ${vibrantColors.coral}20, ${vibrantColors.orange}20)`,
-                      color: vibrantColors.coral
+                      background: `linear-gradient(135deg, ${coloresVibrantes.coral}20, ${coloresVibrantes.naranja}20)`,
+                      color: coloresVibrantes.coral
                     }}
                     asChild
                   >
                     <a href="https://www.linkedin.com/in/maria-angelica-rodriguez-coto-209898385/" target="_blank" rel="noopener noreferrer">
-                      <Linkedin className="w-6 h-6" />
+                    <Linkedin className="w-6 h-6" />
                     </a>
                   </Button>
                 </motion.div>
@@ -410,13 +412,13 @@ export default function HeroSection() {
                     size="lg"
                     className="w-12 h-12 rounded-full transition-all duration-300"
                     style={{ 
-                      background: `linear-gradient(135deg, ${vibrantColors.orange}20, ${vibrantColors.purple}20)`,
-                      color: vibrantColors.orange
+                      background: `linear-gradient(135deg, ${coloresVibrantes.naranja}20, ${coloresVibrantes.morado}20)`,
+                      color: coloresVibrantes.naranja
                     }}
                     asChild
                   >
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mariaangelica@rodriguezcoto.com" target="_blank" rel="noopener noreferrer">
-                      <Mail className="w-6 h-6" />
+                    <Mail className="w-6 h-6" />
                     </a>
                   </Button>
                 </motion.div>

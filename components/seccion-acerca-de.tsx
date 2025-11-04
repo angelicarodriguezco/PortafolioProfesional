@@ -5,15 +5,17 @@ import { useRef } from "react"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Code, Palette, Rocket, Users, Star, BookOpen } from "lucide-react"
+import { usarIdioma } from "@/contexts/language-context"
 
-export default function AboutSection() {
+export default function SeccionAcercaDe() {
+  const { traducir } = usarIdioma()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const vibrantColors = {
-    purple: "#3e196e",
+  const coloresVibrantes = {
+    morado: "#3e196e",
     coral: "#d46c76",
-    orange: "#ffc07c"
+    naranja: "#ffc07c"
   }
 
   const containerVariants = {
@@ -43,23 +45,23 @@ export default function AboutSection() {
   const values = [
     {
       icon: Code,
-      title: "Calidad",
-      description: "Escribir código limpio, eficiente, documentado y bien probado.",
+      titleKey: "about.qualityTitle",
+      descKey: "about.qualityDesc",
     },
     {
       icon: Palette,
-      title: "Innovación",
-      description: "Buscar constantemente mejores soluciones, metodologías y nuevas tecnologías.",
+      titleKey: "about.innovationTitle",
+      descKey: "about.innovationDesc",
     },
     {
       icon: Users,
-      title: "Colaboración",
-      description: "Trabajar en equipo para intercambiar conocimientos y crecer profesionalmente.",
+      titleKey: "about.collaborationTitle",
+      descKey: "about.collaborationDesc",
     },
     {
       icon: Rocket,
-      title: "Aprendizaje Continuo",
-      description: "Mantenerme actualizada con nuevas tecnologías y metodologías de desarrollo.",
+      titleKey: "about.learningTitle",
+      descKey: "about.learningDesc",
     },
   ]
 
@@ -77,26 +79,29 @@ export default function AboutSection() {
             <h2 
               className="text-5xl md:text-7xl font-bold tracking-tight"
               style={{ 
-                background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral}, ${vibrantColors.orange})`,
+                background: `linear-gradient(135deg, ${coloresVibrantes.morado}, ${coloresVibrantes.coral}, ${coloresVibrantes.naranja})`,
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text'
               }}
             >
-              Sobre Mí
+              {traducir("about.title")}
             </h2>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div variants={itemVariants} className="space-y-8">
               <div className="space-y-6">
-                <div className="space-y-4" style={{ color: vibrantColors.purple }}>
+                <div className="space-y-4" style={{ color: coloresVibrantes.morado }}>
                   <p className="text-lg leading-relaxed">
-                  Mi nombre es María Angélica Rodríguez Coto y desde pequeña he sido una persona curiosa y con mucho interés por aprender cosas nuevas, especialmente en áreas relacionadas a la creatividad. Durante mi infancia me encantaba buscar formas de expresar mis ideas mediante el arte y encontrar soluciones a problemas costos.                  </p>
+                    {traducir("about.paragraph1")}
+                  </p>
                   <p className="text-lg leading-relaxed">
-                  Actualmente me encuentro construyendo mi carrera profesional, expandiendo mis conocimientos mediante la universidad y el trabajo para aprender nuevas herramientas y conseguir experiencia laboral.                   </p>
+                    {traducir("about.paragraph2")}
+                  </p>
                   <p className="text-lg leading-relaxed">
-                  Mi objetivo es seguir creciendo en el área de la tecnología y tener un portafolio profesional llamativo para los reclutadores.                  </p>
+                    {traducir("about.paragraph3")}
+                  </p>
                 </div>
               </div>
 
@@ -251,23 +256,23 @@ export default function AboutSection() {
               <h3 
                 className="text-3xl md:text-4xl font-semibold mb-4"
                 style={{ 
-                  background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})`,
+                  background: `linear-gradient(135deg, ${coloresVibrantes.morado}, ${coloresVibrantes.coral})`,
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text'
                 }}
               >
-                Valores Fundamentales
+                {traducir("about.valuesTitle")}
               </h3>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Los principios que guían mi trabajo y me impulsan a ofrecer resultados excepcionales
+              {traducir("about.valuesSubtitle")}
               </p>
             </div>
 
             <motion.div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" variants={containerVariants}>
               {values.map((value, index) => (
                 <motion.div
-                  key={value.title}
+                  key={value.titleKey}
                   variants={itemVariants}
                   whileHover={{ y: -5 }}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -275,22 +280,22 @@ export default function AboutSection() {
                   <Card 
                     className="p-6 h-full bg-white border-2 hover:shadow-lg transition-all duration-300 group"
                     style={{ 
-                      borderColor: vibrantColors.coral,
-                      backgroundColor: `${vibrantColors.coral}05`
+                      borderColor: coloresVibrantes.coral,
+                      backgroundColor: `${coloresVibrantes.coral}05`
                     }}
                   >
                     <div className="space-y-4">
                       <motion.div
                         className="w-12 h-12 rounded-lg flex items-center justify-center transition-colors duration-300"
                         style={{ 
-                          background: `linear-gradient(135deg, ${vibrantColors.purple}20, ${vibrantColors.coral}20)`
+                          background: `linear-gradient(135deg, ${coloresVibrantes.morado}20, ${coloresVibrantes.coral}20)`
                         }}
                         whileHover={{ rotate: 5, scale: 1.1 }}
                       >
-                        <value.icon className="w-6 h-6" style={{ color: vibrantColors.purple }} />
+                        <value.icon className="w-6 h-6" style={{ color: coloresVibrantes.morado }} />
                       </motion.div>
-                      <h4 className="text-lg md:text-xl font-semibold" style={{ color: vibrantColors.purple }}>{value.title}</h4>
-                      <p className="text-lg leading-relaxed" style={{ color: vibrantColors.purple }}>{value.description}</p>
+                      <h4 className="text-lg md:text-xl font-semibold" style={{ color: coloresVibrantes.morado }}>{traducir(value.titleKey)}</h4>
+                      <p className="text-lg leading-relaxed" style={{ color: coloresVibrantes.morado }}>{traducir(value.descKey)}</p>
                     </div>
                   </Card>
                 </motion.div>
@@ -303,16 +308,16 @@ export default function AboutSection() {
               <h3 
                 className="text-3xl md:text-4xl font-semibold mb-4"
                 style={{ 
-                  background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})`,
+                  background: `linear-gradient(135deg, ${coloresVibrantes.morado}, ${coloresVibrantes.coral})`,
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text'
                 }}
               >
-                Visión y Misión
+                {traducir("about.visionTitle")}
               </h3>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Los pilares que definen mi propósito profesional y mi compromiso con la excelencia
+                {traducir("about.visionSubtitle")}
               </p>
             </div>
 
@@ -325,8 +330,8 @@ export default function AboutSection() {
                 <Card 
                   className="p-8 h-full bg-white border-2 hover:shadow-lg transition-all duration-300"
                   style={{ 
-                    borderColor: vibrantColors.coral,
-                    backgroundColor: `${vibrantColors.coral}05`
+                    borderColor: coloresVibrantes.coral,
+                    backgroundColor: `${coloresVibrantes.coral}05`
                   }}
                 >
                   <div className="space-y-6">
@@ -334,17 +339,15 @@ export default function AboutSection() {
                       <div 
                         className="w-12 h-12 rounded-lg flex items-center justify-center"
                         style={{ 
-                          background: `linear-gradient(135deg, ${vibrantColors.purple}20, ${vibrantColors.coral}20)`
+                          background: `linear-gradient(135deg, ${coloresVibrantes.morado}20, ${coloresVibrantes.coral}20)`
                         }}
                       >
-                        <Star className="w-6 h-6" style={{ color: vibrantColors.coral }} />
+                        <Star className="w-6 h-6" style={{ color: coloresVibrantes.coral }} />
                       </div>
-                      <h4 className="text-2xl font-bold" style={{ color: vibrantColors.purple }}>Misión</h4>
+                      <h4 className="text-2xl font-bold" style={{ color: coloresVibrantes.morado }}>{traducir("about.missionTitle")}</h4>
                     </div>
-                    <p className="text-lg leading-relaxed" style={{ color: vibrantColors.purple }}>
-                    Transformar ideas en soluciones funcionales y escalables, 
-                    creando aplicaciones que generen valor para clientes, 
-                    aplicando buenas prácticas y tecnologías modernas.
+                    <p className="text-lg leading-relaxed" style={{ color: coloresVibrantes.morado }}>
+                      {traducir("about.missionDesc")}
                     </p>
                   </div>
                 </Card>
@@ -358,8 +361,8 @@ export default function AboutSection() {
                 <Card 
                   className="p-8 h-full bg-white border-2 hover:shadow-lg transition-all duration-300"
                   style={{ 
-                    borderColor: vibrantColors.coral,
-                    backgroundColor: `${vibrantColors.coral}05`
+                    borderColor: coloresVibrantes.coral,
+                    backgroundColor: `${coloresVibrantes.coral}05`
                   }}
                 >
                   <div className="space-y-6">
@@ -367,17 +370,16 @@ export default function AboutSection() {
                         <div 
                           className="w-12 h-12 rounded-lg flex items-center justify-center"
                           style={{ 
-                            background: `linear-gradient(135deg, ${vibrantColors.coral}20, ${vibrantColors.purple}20)`
+                            background: `linear-gradient(135deg, ${coloresVibrantes.coral}20, ${coloresVibrantes.morado}20)`
                           }}
                         >
-                          <BookOpen className="w-6 h-6" style={{ color: vibrantColors.coral }} />
+                          <BookOpen className="w-6 h-6" style={{ color: coloresVibrantes.coral }} />
                         </div>
-                        <h4 className="text-2xl font-bold" style={{ color: vibrantColors.purple }}>Visión</h4>
+                        <h4 className="text-2xl font-bold" style={{ color: coloresVibrantes.morado }}>{traducir("about.visionTitleCard")}</h4>
                       </div>
-                      <p className="text-lg leading-relaxed" style={{ color: vibrantColors.purple }}>
-                      Software Engineer líder en el desarrollo de aplicaciones y soluciones web innovadoras, 
-                      manteniéndome constantemente actualizada sobre nuevas tecnologías y metodologías.
-                    </p>
+                      <p className="text-lg leading-relaxed" style={{ color: coloresVibrantes.morado }}>
+                        {traducir("about.visionDesc")}
+                      </p>
                   </div>
                 </Card>
               </motion.div>

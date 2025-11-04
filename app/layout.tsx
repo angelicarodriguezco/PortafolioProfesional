@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Suspense } from "react"
 import "./globals.css"
+import { ProveedorIdioma } from "@/contexts/language-context"
 
 export const metadata: Metadata = {
   title: "Portfolio | Modern Developer",
@@ -42,7 +43,9 @@ export default function RootLayout({
         <meta name="msapplication-TileImage" content="/logoYPerfil/Favicon.svg" />
       </head>
       <body className="antialiased overflow-x-hidden">
-        <Suspense fallback={null}>{children}</Suspense>
+        <ProveedorIdioma>
+          <Suspense fallback={null}>{children}</Suspense>
+        </ProveedorIdioma>
       </body>
     </html>
   )

@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, X } from "lucide-react"
+import { usarIdioma } from "@/contexts/language-context"
 
 interface Project {
   id: string
@@ -22,44 +23,34 @@ interface Project {
     src: string
     alt: string
   }[]
+  titleKey?: string
+  descriptionKey?: string
+  longDescriptionKey?: string
+  categoryKey?: string
 }
 
-export default function GallerySection() {
+export default function SeccionGaleria() {
+  const { traducir, idioma } = usarIdioma()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0)
   const [selectedProjectShelby, setSelectedProjectShelby] = useState<Project | null>(null)
+  const [projects, setProjects] = useState<Project[]>([])
 
   useEffect(() => {
-    if (!selectedProject || !selectedProject.media || selectedProject.media.length <= 1) return
-
-    const interval = setInterval(() => {
-      setCurrentMediaIndex((prevIndex) => 
-        prevIndex < selectedProject.media.length - 1 ? prevIndex + 1 : 0
-      )
-    }, 4000)
-
-    return () => clearInterval(interval)
-  }, [selectedProject, currentMediaIndex])
-
-  const vibrantColors = {
-    purple: "#3e196e",
-    coral: "#d46c76",
-    orange: "#ffc07c"
-  }
-
-  const projects: Project[] = [
+    const projectsData: Project[] = [
     {
       id: "1",
-      title: "Pokémon Fight",
-      description: "Sistema de Batallas Pokémon",
-      longDescription:
-        "Aplicación web de batallas Pokémon donde los usuarios pueden crear equipos de Pokémon, desafiar a amigos y participar en combates estratégicos. \n" +
-        "El sistema incluye gestión de usuarios, creación de equipos personalizados, sistema de batallas por turnos, historial de partidas, tabla de liderazgo y sistema de amigos. \n" +
-        "Los usuarios pueden registrarse, crear múltiples equipos con diferentes Pokémon, desafiar a otros jugadores y seguir su progreso a través de estadísticas detalladas.",
+      titleKey: "gallery.projects.pokemon.title",
+      descriptionKey: "gallery.projects.pokemon.description",
+      longDescriptionKey: "gallery.projects.pokemon.longDescription",
+      title: traducir("gallery.projects.pokemon.title"),
+      description: traducir("gallery.projects.pokemon.description"),
+      longDescription: traducir("gallery.projects.pokemon.longDescription"),
       image: "GifsFotosPokemonFight/FotoPokemonFight.png",
-      category: "Aplicación Web",
+      categoryKey: "gallery.category",
+      category: traducir("gallery.category"),
       technologies: ["Node.js", "Express.js", "MongoDB", "HTML", "CSS", "JavaScript"],
       githubUrl: "https://github.com/ECF2001/Pokemon-Fight",
       featured: true,
@@ -80,12 +71,15 @@ export default function GallerySection() {
     },
     {
       id: "2",
-      title: "Wealthify",
-      description: "Plataforma de Inversión en Bolsa de Valores",
-      longDescription:
-        "Wealthify es una plataforma web integral de inversión en bolsa de valores que conecta asesores financieros con inversionistas. La aplicación permite a los usuarios registrarse como asesores o clientes, gestionar portafolios de inversión, visualizar datos de mercado en tiempo real, realizar compras y ventas de acciones con PayPal, y generar reportes financieros detallados.",
+      titleKey: "gallery.projects.wealthify.title",
+      descriptionKey: "gallery.projects.wealthify.description",
+      longDescriptionKey: "gallery.projects.wealthify.longDescription",
+      title: traducir("gallery.projects.wealthify.title"),
+      description: traducir("gallery.projects.wealthify.description"),
+      longDescription: traducir("gallery.projects.wealthify.longDescription"),
       image: "GifsFotosWealthify/FotoWealthify.png",
-      category: "Aplicación Web",
+      categoryKey: "gallery.category",
+      category: traducir("gallery.category"),
       technologies: ["C#", "ASP.NET", "Entity Framework", "SQL Server", "HTML", "CSS", "JavaScript", "Cloudinary", "Yahoo Finance API", "PayPal API"],
       githubUrl: "https://github.com/angelicarodriguezco/Proyecto2Grupo3",
       featured: false,
@@ -106,12 +100,15 @@ export default function GallerySection() {
     },
     {
       id: "3",
-      title: "Flickr Favorites",
-      description: "Buscador y gestor de imágenes favoritas de Flickr",
-      longDescription:
-        "FlickrFavorites es una aplicación web que permite a los usuarios buscar imágenes de Flickr, marcarlas como favoritas y gestionar su colección personal de imágenes favoritas. La aplicación incluye una galería de búsqueda de imágenes, y un panel de gestión de favoritos donde los usuarios pueden editar títulos de sus imágenes guardadas.",
+      titleKey: "gallery.projects.flickr.title",
+      descriptionKey: "gallery.projects.flickr.description",
+      longDescriptionKey: "gallery.projects.flickr.longDescription",
+      title: traducir("gallery.projects.flickr.title"),
+      description: traducir("gallery.projects.flickr.description"),
+      longDescription: traducir("gallery.projects.flickr.longDescription"),
       image: "GifsFotosFlickrFavorites/FotoFlickrFavorites.png",
-      category: "Aplicación Web",
+      categoryKey: "gallery.category",
+      category: traducir("gallery.category"),
       technologies: ["React", "Node.js", "MongoDB", "Jest", "Flickr API"],
       githubUrl: "https://github.com/angelicarodriguezco/FlickrFavorites",
       featured: true,
@@ -126,12 +123,15 @@ export default function GallerySection() {
     },
     {
       id: "4",
-      title: "MiRecetario",
-      description: "Gestor de recetas con planificación de menús y listas de compras",
-      longDescription:
-        "MiRecetario es una aplicación diseñada para facilitar la gestión de recetas, la planificación de menús semanales y la organización de listas de compras. La idea principal del proyecto es ofrecer una plataforma donde los usuarios puedan crear, editar y clasificar sus recetas, asignarlas a un plan de comidas semanal y generar una lista de ingredientes por comprar para sus recetas.",
+      titleKey: "gallery.projects.recetario.title",
+      descriptionKey: "gallery.projects.recetario.description",
+      longDescriptionKey: "gallery.projects.recetario.longDescription",
+      title: traducir("gallery.projects.recetario.title"),
+      description: traducir("gallery.projects.recetario.description"),
+      longDescription: traducir("gallery.projects.recetario.longDescription"),
       image: "GifsFotosMiRecetario/FotoMiRecetario.png",
-      category: "Aplicación Web",
+      categoryKey: "gallery.category",
+      category: traducir("gallery.category"),
       technologies: ["Java", "TypeScript", "React", "MySQL", "Spring Boot", "Node.js"],
       githubUrl: "https://github.com/angelicarodriguezco/MiRecetario",
       featured: false,
@@ -145,7 +145,40 @@ export default function GallerySection() {
         { type: 'image', src: '/GifsFotosMiRecetario/PaginaRegistro.png', alt: 'MiRecetario - Página Registro de Usuario' }
       ]
     }
-  ]
+    ]
+    setProjects(projectsData)
+    
+    if (selectedProject) {
+      const updatedProject = projectsData.find(p => p.id === selectedProject.id)
+      if (updatedProject) {
+        setSelectedProject(updatedProject)
+      }
+    }
+    if (selectedProjectShelby) {
+      const updatedProject = projectsData.find(p => p.id === selectedProjectShelby.id)
+      if (updatedProject) {
+        setSelectedProjectShelby(updatedProject)
+      }
+    }
+  }, [idioma, traducir])
+
+  useEffect(() => {
+    if (!selectedProject || !selectedProject.media || selectedProject.media.length <= 1) return
+
+    const interval = setInterval(() => {
+      setCurrentMediaIndex((prevIndex) => 
+        prevIndex < selectedProject.media.length - 1 ? prevIndex + 1 : 0
+      )
+    }, 4000)
+
+    return () => clearInterval(interval)
+  }, [selectedProject, currentMediaIndex])
+
+  const coloresVibrantes = {
+    morado: "#3e196e",
+    coral: "#d46c76",
+    naranja: "#ffc07c"
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -185,17 +218,17 @@ export default function GallerySection() {
             <h2 
               className="text-5xl md:text-7xl font-bold tracking-tight leading-tight pb-2"
               style={{ 
-                background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral}, ${vibrantColors.orange})`,
+                background: `linear-gradient(135deg, ${coloresVibrantes.morado}, ${coloresVibrantes.coral}, ${coloresVibrantes.naranja})`,
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
                 lineHeight: '1.1'
               }}
             >
-              Trabajos Seleccionados
+              {traducir("gallery.title")}
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Una muestra de proyectos que demuestran mi experiencia en desarrollo web, diseño UI/UX y resolución creativa de problemas
+              {traducir("gallery.subtitle")}
             </p>
           </motion.div>
 
@@ -231,17 +264,17 @@ export default function GallerySection() {
                     }`}
                   >
                     <div className="space-y-2">
-                      <div className="flex items-center space-x-4 text-sm" style={{ color: vibrantColors.coral }}>
+                      <div className="flex items-center space-x-4 text-sm" style={{ color: coloresVibrantes.coral }}>
                         <span>{String(index + 1).padStart(2, '0')}</span>
                         <span>{project.category}</span>
                         <span>2024</span>
                       </div>
-                      <h3 className="text-3xl md:text-4xl font-bold" style={{ color: vibrantColors.purple }}>
+                      <h3 className="text-3xl md:text-4xl font-bold" style={{ color: coloresVibrantes.morado }}>
                         {project.title}
                       </h3>
                     </div>
                     
-                    <p className="text-lg leading-relaxed" style={{ color: vibrantColors.purple }}>
+                    <p className="text-lg leading-relaxed" style={{ color: coloresVibrantes.morado }}>
                       {project.description}
                     </p>
                     
@@ -251,9 +284,9 @@ export default function GallerySection() {
                           key={tech}
                           className="px-3 py-1 text-sm rounded-full"
                           style={{ 
-                            backgroundColor: `${vibrantColors.coral}20`,
-                            color: vibrantColors.purple,
-                            borderColor: vibrantColors.coral
+                            backgroundColor: `${coloresVibrantes.coral}20`,
+                            color: coloresVibrantes.morado,
+                            borderColor: coloresVibrantes.coral
                           }}
                         >
                           {tech}
@@ -385,14 +418,14 @@ export default function GallerySection() {
 
                     <div className="space-y-4">
                       <div>
-                        <h4 className="font-semibold mb-2">Descripción</h4>
+                        <h4 className="font-semibold mb-2">{traducir("gallery.description")}</h4>
                         <p className="text-muted-foreground leading-relaxed">
                           {selectedProject.longDescription}
                         </p>
                       </div>
 
                       <div>
-                        <h4 className="font-semibold mb-2">Tecnologías</h4>
+                        <h4 className="font-semibold mb-2">{traducir("gallery.technologies")}</h4>
                         <div className="flex flex-wrap gap-2">
                           {selectedProject.technologies.map((tech, index) => (
                             <Badge key={index} variant="secondary">
@@ -406,7 +439,7 @@ export default function GallerySection() {
                         <Button asChild>
                           <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer">
                             <Github className="w-4 h-4 mr-2" />
-                            Ver en GitHub
+                            {traducir("gallery.seeGitHub")}
                           </a>
                         </Button>
                         <Button 
@@ -417,7 +450,7 @@ export default function GallerySection() {
                           }}
                         >
                           <ExternalLink className="w-4 h-4 mr-2" />
-                          Ver Detalles
+                          {traducir("gallery.seeDetails")}
                         </Button>
                       </div>
                     </div>
@@ -466,7 +499,7 @@ export default function GallerySection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                CLOSE
+                {traducir("gallery.close").toUpperCase()}
               </motion.button>
 
               <div className="grid grid-cols-24 h-full">
@@ -523,21 +556,21 @@ export default function GallerySection() {
 
                     <div className="space-y-6">
                       <div className="grid grid-cols-9 gap-4">
-                        <p className="text-sm font-semibold text-[#000000] uppercase col-span-3">CATEGORÍA</p>
+                        <p className="text-sm font-semibold text-[#000000] uppercase col-span-3">{traducir("gallery.category").toUpperCase()}</p>
                         <p className="text-sm text-[#000000] col-span-6">
                           {selectedProjectShelby?.category}
                         </p>
                       </div>
 
                       <div className="grid grid-cols-9 gap-4">
-                        <p className="text-sm font-semibold text-[#000000] uppercase col-span-3">DESCRIPCIÓN</p>
+                        <p className="text-sm font-semibold text-[#000000] uppercase col-span-3">{traducir("gallery.description").toUpperCase()}</p>
                         <p className="text-base text-[#000000] col-span-6 leading-relaxed">
                           {selectedProjectShelby?.longDescription}
                         </p>
                       </div>
 
                       <div className="grid grid-cols-9 gap-4">
-                        <p className="text-sm font-semibold text-[#000000] uppercase col-span-3">TECNOLOGÍAS USADAS</p>
+                        <p className="text-sm font-semibold text-[#000000] uppercase col-span-3">{traducir("gallery.technologiesUsed")}</p>
                         <p className="text-sm text-[#000000] col-span-6">
                           {selectedProjectShelby?.technologies.join(', ')}
                         </p>
@@ -553,7 +586,7 @@ export default function GallerySection() {
                           <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 -3.93402e-07V9L7.2002 9V3.07324L1.27441 8.99805L0.00195313 7.72559L5.92676 1.7998L0 1.7998L0 0L9 -3.93402e-07Z" fill="#000000"></path>
                           </svg>
-                          VISIT
+                          {traducir("gallery.visit")}
                         </a>
                       </div>
                     </div>
