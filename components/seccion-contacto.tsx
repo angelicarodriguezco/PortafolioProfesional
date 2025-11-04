@@ -137,8 +137,8 @@ export default function ContactSection() {
             >
               Contáctame
             </h2>
-            <p className="text-xl max-w-3xl mx-auto" style={{ color: vibrantColors.purple }}>
-              Siempre entusiasmada de hablar sobre nuevos proyectos y oportunidades.
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            Siempre entusiasmada de hablar sobre nuevos proyectos y oportunidades.
             </p>
           </motion.div>
 

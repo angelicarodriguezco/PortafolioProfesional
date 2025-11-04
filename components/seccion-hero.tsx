@@ -260,12 +260,13 @@ export default function HeroSection() {
               className="flex-1 text-center lg:text-left order-2 lg:order-2 space-y-6"
             >
               <motion.h1
-                className="text-5xl lg:text-7xl font-bold tracking-tight"
+                className="text-5xl lg:text-7xl font-bold tracking-tight leading-tight pb-2"
                 style={{ 
                   background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral}, ${vibrantColors.orange})`,
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
+                  backgroundClip: 'text',
+                  lineHeight: '1.1'
                 }}
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
@@ -331,20 +332,23 @@ export default function HeroSection() {
                     style={{ 
                       background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})` 
                     }}
+                    asChild
                   >
-                    <span className="relative z-10 flex items-center gap-2">
-                      <Download className="w-5 h-5" />
-                      Descargar CV
-                    </span>
-                    <motion.div
-                      className="absolute inset-0"
-                      style={{ 
-                        background: `linear-gradient(135deg, ${vibrantColors.coral}, ${vibrantColors.orange})` 
-                      }}
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    />
+                    <a href="/CV" download="CV-Angélica-Rodríguez.pdf">
+                      <span className="relative z-10 flex items-center gap-2">
+                        <Download className="w-5 h-5" />
+                        Descargar CV
+                      </span>
+                      <motion.div
+                        className="absolute inset-0"
+                        style={{ 
+                          background: `linear-gradient(135deg, ${vibrantColors.coral}, ${vibrantColors.orange})` 
+                        }}
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </a>
                   </Button>
                 </motion.div>
                 

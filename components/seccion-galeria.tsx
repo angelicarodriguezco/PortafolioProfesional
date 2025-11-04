@@ -183,12 +183,13 @@ export default function GallerySection() {
         >
           <motion.div variants={itemVariants} className="text-center space-y-4">
             <h2 
-              className="text-5xl md:text-7xl font-bold tracking-tight"
+              className="text-5xl md:text-7xl font-bold tracking-tight leading-tight pb-2"
               style={{ 
                 background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral}, ${vibrantColors.orange})`,
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
+                backgroundClip: 'text',
+                lineHeight: '1.1'
               }}
             >
               Trabajos Seleccionados

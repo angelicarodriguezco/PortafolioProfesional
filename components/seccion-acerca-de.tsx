@@ -90,17 +90,13 @@ export default function AboutSection() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div variants={itemVariants} className="space-y-8">
               <div className="space-y-6">
-                <h3 className="text-2xl font-semibold" style={{ color: vibrantColors.purple }}>Mi Trayectoria</h3>
-                <div className="space-y-4 leading-relaxed" style={{ color: vibrantColors.purple }}>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                  </p>
+                <div className="space-y-4" style={{ color: vibrantColors.purple }}>
+                  <p className="text-lg leading-relaxed">
+                  Mi nombre es María Angélica Rodríguez Coto y desde pequeña he sido una persona curiosa y con mucho interés por aprender cosas nuevas, especialmente en áreas relacionadas a la creatividad. Durante mi infancia me encantaba buscar formas de expresar mis ideas mediante el arte y encontrar soluciones a problemas costos.                  </p>
+                  <p className="text-lg leading-relaxed">
+                  Actualmente me encuentro construyendo mi carrera profesional, expandiendo mis conocimientos mediante la universidad y el trabajo para aprender nuevas herramientas y conseguir experiencia laboral.                   </p>
+                  <p className="text-lg leading-relaxed">
+                  Mi objetivo es seguir creciendo en el área de la tecnología y tener un portafolio profesional llamativo para los reclutadores.                  </p>
                 </div>
               </div>
 
@@ -146,8 +142,7 @@ export default function AboutSection() {
                   className="absolute top-4 right-4"
                   animate={{
                     opacity: [0, 1, 0],
-                    scale: [0.5, 1.2, 0.5],
-                    rotate: [0, 180, 360]
+                    scale: [0.5, 1.2, 0.5]
                   }}
                   transition={{
                     duration: 8,
@@ -156,20 +151,18 @@ export default function AboutSection() {
                     delay: 0
                   }}
                 >
-                  <div 
+                  <img 
+                    src="/logoYPerfil/Logo.svg"
+                    alt="Logo"
                     className="w-6 h-6"
-                    style={{
-                      background: 'linear-gradient(45deg, #fbbf24, #f59e0b)',
-                      clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)'
-                    }}
+                    style={{ transform: 'rotate(180deg)' }}
                   />
                 </motion.div>
                 <motion.div
                   className="absolute top-4 left-4"
                   animate={{
                     opacity: [0, 1, 0],
-                    scale: [0.5, 1.2, 0.5],
-                    rotate: [0, -180, -360]
+                    scale: [0.5, 1.2, 0.5]
                   }}
                   transition={{
                     duration: 10,
@@ -178,20 +171,17 @@ export default function AboutSection() {
                     delay: 0.8
                   }}
                 >
-                  <div 
+                  <img 
+                    src="/logoYPerfil/Logo.svg"
+                    alt="Logo"
                     className="w-6 h-6"
-                    style={{
-                      background: 'linear-gradient(45deg, #f59e0b, #d97706)',
-                      clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)'
-                    }}
                   />
                 </motion.div>
                 <motion.div
                   className="absolute bottom-4 right-4"
                   animate={{
                     opacity: [0, 1, 0],
-                    scale: [0.5, 1.2, 0.5],
-                    rotate: [0, 180, 360]
+                    scale: [0.5, 1.2, 0.5]
                   }}
                   transition={{
                     duration: 12,
@@ -200,20 +190,18 @@ export default function AboutSection() {
                     delay: 1.5
                   }}
                 >
-                  <div 
+                  <img 
+                    src="/logoYPerfil/Logo.svg"
+                    alt="Logo"
                     className="w-6 h-6"
-                    style={{
-                      background: 'linear-gradient(45deg, #f59e0b, #ea580c)',
-                      clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)'
-                    }}
+                    style={{ transform: 'rotate(180deg)' }}
                   />
                 </motion.div>
                 <motion.div
                   className="absolute bottom-4 left-4"
                   animate={{
                     opacity: [0, 1, 0],
-                    scale: [0.5, 1.2, 0.5],
-                    rotate: [0, -180, -360]
+                    scale: [0.5, 1.2, 0.5]
                   }}
                   transition={{
                     duration: 11,
@@ -222,12 +210,11 @@ export default function AboutSection() {
                     delay: 2.2
                   }}
                 >
-                  <div 
+                  <img 
+                    src="/logoYPerfil/Logo.svg"
+                    alt="Logo"
                     className="w-6 h-6"
-                    style={{
-                      background: 'linear-gradient(45deg, #d97706, #b45309)',
-                      clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)'
-                    }}
+                    style={{ transform: 'rotate(180deg)' }}
                   />
                 </motion.div>
               </motion.div>
@@ -259,10 +246,10 @@ export default function AboutSection() {
             </motion.div>
           </div>
 
-          <motion.div variants={itemVariants} className="space-y-12">
+          <motion.div variants={itemVariants} className="space-y-12 mt-24">
             <div className="text-center">
               <h3 
-                className="text-3xl font-semibold mb-4"
+                className="text-3xl md:text-4xl font-semibold mb-4"
                 style={{ 
                   background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})`,
                   WebkitBackgroundClip: 'text',
@@ -272,7 +259,7 @@ export default function AboutSection() {
               >
                 Valores Fundamentales
               </h3>
-              <p className="max-w-2xl mx-auto" style={{ color: vibrantColors.purple }}>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Los principios que guían mi trabajo y me impulsan a ofrecer resultados excepcionales
               </p>
             </div>
@@ -302,8 +289,8 @@ export default function AboutSection() {
                       >
                         <value.icon className="w-6 h-6" style={{ color: vibrantColors.purple }} />
                       </motion.div>
-                      <h4 className="text-lg font-semibold" style={{ color: vibrantColors.purple }}>{value.title}</h4>
-                      <p className="text-sm leading-relaxed" style={{ color: vibrantColors.purple }}>{value.description}</p>
+                      <h4 className="text-lg md:text-xl font-semibold" style={{ color: vibrantColors.purple }}>{value.title}</h4>
+                      <p className="text-lg leading-relaxed" style={{ color: vibrantColors.purple }}>{value.description}</p>
                     </div>
                   </Card>
                 </motion.div>
@@ -311,10 +298,10 @@ export default function AboutSection() {
             </motion.div>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="space-y-12">
+          <motion.div variants={itemVariants} className="space-y-12 mt-24">
             <div className="text-center">
               <h3 
-                className="text-3xl font-semibold mb-4"
+                className="text-3xl md:text-4xl font-semibold mb-4"
                 style={{ 
                   background: `linear-gradient(135deg, ${vibrantColors.purple}, ${vibrantColors.coral})`,
                   WebkitBackgroundClip: 'text',
@@ -324,7 +311,7 @@ export default function AboutSection() {
               >
                 Visión y Misión
               </h3>
-              <p className="max-w-2xl mx-auto" style={{ color: vibrantColors.purple }}>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 Los pilares que definen mi propósito profesional y mi compromiso con la excelencia
               </p>
             </div>
@@ -388,8 +375,8 @@ export default function AboutSection() {
                         <h4 className="text-2xl font-bold" style={{ color: vibrantColors.purple }}>Visión</h4>
                       </div>
                       <p className="text-lg leading-relaxed" style={{ color: vibrantColors.purple }}>
-                      Ser una Software Engineer líder en el desarrollo de aplicaciones y soluciones web innovadoras, 
-                      constantemente actualizada sobre nuevas tecnologías y metodologías.
+                      Software Engineer líder en el desarrollo de aplicaciones y soluciones web innovadoras, 
+                      manteniéndome constantemente actualizada sobre nuevas tecnologías y metodologías.
                     </p>
                   </div>
                 </Card>
