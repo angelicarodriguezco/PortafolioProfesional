@@ -70,12 +70,12 @@ export default function SeccionHabilidades() {
             <motion.div variants={itemVariants} className="pt-8">
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h4 className="text-lg font-medium uppercase tracking-wider" style={{ color: coloresVibrantes.morado }}>{traducir("skills.frontend")}</h4>
+                  <h4 className="text-3xl md:text-4xl font-bold" style={{ color: coloresVibrantes.morado }}>{traducir("skills.frontend")}</h4>
                   <div className="flex flex-wrap gap-3">
                     {["React", "CSS", "HTML", "JavaScript", "TypeScript"].map((tech, index) => (
                       <motion.span
                         key={tech}
-                        className="px-6 py-3 text-lg border rounded-full transition-all duration-300"
+                        className="px-8 py-4 text-xl border rounded-full transition-all duration-300"
                 style={{ 
                           borderColor: coloresVibrantes.coral,
                           color: coloresVibrantes.morado,
@@ -93,12 +93,12 @@ export default function SeccionHabilidades() {
                 </div>
 
                 <div className="space-y-4">
-                  <h4 className="text-lg font-medium uppercase tracking-wider" style={{ color: coloresVibrantes.morado }}>{traducir("skills.backend")}</h4>
+                  <h4 className="text-3xl md:text-4xl font-bold" style={{ color: coloresVibrantes.morado }}>{traducir("skills.backend")}</h4>
                   <div className="flex flex-wrap gap-3">
                     {["Node.js", "Python", "Java", "C#", "Spring Boot", "ASP.NET"].map((tech, index) => (
                       <motion.span
                         key={tech}
-                        className="px-6 py-3 text-lg border rounded-full transition-all duration-300"
+                        className="px-8 py-4 text-xl border rounded-full transition-all duration-300"
                 style={{ 
                           borderColor: coloresVibrantes.coral,
                           color: coloresVibrantes.morado,
@@ -116,12 +116,12 @@ export default function SeccionHabilidades() {
             </div>
 
                 <div className="space-y-4">
-                  <h4 className="text-lg font-medium uppercase tracking-wider" style={{ color: coloresVibrantes.morado }}>{traducir("skills.databases")}</h4>
+                  <h4 className="text-3xl md:text-4xl font-bold" style={{ color: coloresVibrantes.morado }}>{traducir("skills.databases")}</h4>
                   <div className="flex flex-wrap gap-3">
                     {["MySQL", "PostgreSQL", "MongoDB", "SQL Server"].map((tech, index) => (
                       <motion.span
                         key={tech}
-                        className="px-6 py-3 text-lg border rounded-full transition-all duration-300"
+                        className="px-8 py-4 text-xl border rounded-full transition-all duration-300"
                       style={{ 
                         borderColor: coloresVibrantes.coral,
                           color: coloresVibrantes.morado,
@@ -139,12 +139,12 @@ export default function SeccionHabilidades() {
                 </div>
 
                       <div className="space-y-4">
-                  <h4 className="text-lg font-medium uppercase tracking-wider" style={{ color: coloresVibrantes.morado }}>{traducir("skills.apis")}</h4>
+                  <h4 className="text-3xl md:text-4xl font-bold" style={{ color: coloresVibrantes.morado }}>{traducir("skills.apis")}</h4>
                   <div className="flex flex-wrap gap-3">
                     {["Cloudinary", "Yahoo Finance API", "PayPal API", "Flickr API"].map((tech, index) => (
                       <motion.span
                         key={tech}
-                        className="px-6 py-3 text-lg border rounded-full transition-all duration-300"
+                        className="px-8 py-4 text-xl border rounded-full transition-all duration-300"
                             style={{ 
                           borderColor: coloresVibrantes.coral,
                               color: coloresVibrantes.morado,
@@ -162,12 +162,12 @@ export default function SeccionHabilidades() {
                         </div>
 
                 <div className="space-y-4">
-                  <h4 className="text-lg font-medium uppercase tracking-wider" style={{ color: coloresVibrantes.morado }}>{traducir("skills.tools")}</h4>
+                  <h4 className="text-3xl md:text-4xl font-bold" style={{ color: coloresVibrantes.morado }}>{traducir("skills.tools")}</h4>
                   <div className="flex flex-wrap gap-3">
                     {["Git", "GitHub", "BitBucket", "Docker", "Postman"].map((tech, index) => (
                             <motion.span
                               key={tech}
-                        className="px-6 py-3 text-lg border rounded-full transition-all duration-300"
+                        className="px-8 py-4 text-xl border rounded-full transition-all duration-300"
                               style={{ 
                           borderColor: coloresVibrantes.coral,
                                 color: coloresVibrantes.morado,

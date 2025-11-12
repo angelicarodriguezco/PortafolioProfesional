@@ -419,7 +419,7 @@ export default function SeccionGaleria() {
                     <div className="space-y-4">
                       <div>
                         <h4 className="font-semibold mb-2">{traducir("gallery.description")}</h4>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
                           {selectedProject.longDescription}
                         </p>
                       </div>
@@ -564,7 +564,7 @@ export default function SeccionGaleria() {
 
                       <div className="grid grid-cols-9 gap-4">
                         <p className="text-sm font-semibold text-[#000000] uppercase col-span-3">{traducir("gallery.description").toUpperCase()}</p>
-                        <p className="text-base text-[#000000] col-span-6 leading-relaxed">
+                        <p className="text-base text-[#000000] col-span-6 leading-relaxed whitespace-pre-line">
                           {selectedProjectShelby?.longDescription}
                         </p>
                       </div>

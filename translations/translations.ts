@@ -39,6 +39,7 @@ export const translations = {
     skills: {
       title: "Habilidades Técnicas",
       subtitle: "Tecnologías y herramientas con las que trabajo para crear soluciones innovadoras",
+      category: "Habilidad Técnica",
       frontend: "Frontend",
       backend: "Backend",
       databases: "Bases de datos",
@@ -55,7 +56,7 @@ export const translations = {
       seeGitHub: "Ver en GitHub",
       seeDetails: "Ver Detalles",
       close: "Cerrar",
-      visit: "VISITAR",
+      visit: "Visitar Repositorio de Github",
       projects: {
         pokemon: {
           title: "Pokémon Fight",
@@ -140,6 +141,7 @@ export const translations = {
     skills: {
       title: "Technical Skills",
       subtitle: "Technologies and tools I work with to create innovative solutions",
+      category: "Technical Skill",
       frontend: "Frontend",
       backend: "Backend",
       databases: "Databases",
@@ -156,7 +158,7 @@ export const translations = {
       seeGitHub: "View on GitHub",
       seeDetails: "View Details",
       close: "Close",
-      visit: "VISIT",
+      visit: "Visit GitHub Repository",
       projects: {
         pokemon: {
           title: "Pokémon Fight",
