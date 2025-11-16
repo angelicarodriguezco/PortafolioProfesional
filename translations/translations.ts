@@ -36,6 +36,14 @@ export const translations = {
       visionTitleCard: "Visión",
       visionDesc: "Software Engineer líder en el desarrollo de aplicaciones y soluciones web innovadoras, manteniéndome constantemente actualizada sobre nuevas tecnologías y metodologías."
     },
+    languages: {
+      title: "Idiomas",
+      subtitle: "Lenguajes que domino para comunicarme efectivamente en entornos globales",
+      native: "Nativo",
+      advanced: "Avanzado",
+      intermediate: "Intermedio",
+      basic: "Básico"
+    },
     skills: {
       title: "Habilidades Técnicas",
       subtitle: "Tecnologías y herramientas con las que trabajo para crear soluciones innovadoras",
@@ -137,6 +145,14 @@ export const translations = {
       missionDesc: "Transform ideas into functional and scalable solutions, creating applications that generate value for clients, applying best practices and modern technologies.",
       visionTitleCard: "Vision",
       visionDesc: "Leading Software Engineer in the development of innovative web applications and solutions, constantly staying updated on new technologies and methodologies."
+    },
+    languages: {
+      title: "Languages",
+      subtitle: "Languages I master to communicate effectively in global environments",
+      native: "Native",
+      advanced: "Advanced",
+      intermediate: "Intermediate",
+      basic: "Basic"
     },
     skills: {
       title: "Technical Skills",

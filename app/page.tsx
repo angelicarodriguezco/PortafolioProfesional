@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import SeccionHero from "@/components/seccion-hero"
 import SeccionAcercaDe from "@/components/seccion-acerca-de"
+import SeccionIdiomas from "@/components/seccion-idiomas"
 import SeccionHabilidades from "@/components/seccion-habilidades"
 import SeccionGaleria from "@/components/seccion-galeria"
 import SeccionContacto from "@/components/seccion-contacto"
@@ -25,7 +26,7 @@ export default function Portafolio() {
 
   useEffect(() => {
     const manejarDesplazamiento = () => {
-      const secciones = ["hero", "about", "skills", "gallery", "contact"]
+      const secciones = ["hero", "about", "languages", "skills", "gallery", "contact"]
       const posicionDesplazamiento = window.scrollY + 100
 
       for (const seccion of secciones) {
@@ -60,6 +61,7 @@ export default function Portafolio() {
             <Navegacion seccionActual={seccionActual} />
             <SeccionHero />
             <SeccionAcercaDe />
+            <SeccionIdiomas />
             <SeccionHabilidades />
             <SeccionGaleria />
             <SeccionContacto />

@@ -1,19 +1,29 @@
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
+import React from "react"
 import { Badge } from "@/components/ui/badge"
 import { usarIdioma } from "@/contexts/language-context"
+import Lottie from "lottie-react"
 
 export default function SeccionHabilidades() {
   const { traducir } = usarIdioma()
   const referencia = useRef(null)
   const estaEnVista = useInView(referencia, { once: true, margin: "-100px" })
+  const [lottieData, setLottieData] = useState<any>(null)
   const coloresVibrantes = {
     morado: "#3e196e",
     coral: "#d46c76",
     naranja: "#ffc07c"
   }
+
+  useEffect(() => {
+    fetch("/animacionLottie/Background Blob.json")
+      .then((res) => res.json())
+      .then((data) => setLottieData(data))
+      .catch((err) => console.error("Error loading Lottie animation:", err))
+  }, [])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -68,7 +78,8 @@ export default function SeccionHabilidades() {
 
           <motion.div variants={itemVariants} className="space-y-12">
             <motion.div variants={itemVariants} className="pt-8">
-              <div className="space-y-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div className="space-y-8">
                 <div className="space-y-4">
                   <h4 className="text-3xl md:text-4xl font-bold" style={{ color: coloresVibrantes.morado }}>{traducir("skills.frontend")}</h4>
                   <div className="flex flex-wrap gap-3">
@@ -183,6 +194,32 @@ export default function SeccionHabilidades() {
                           ))}
                         </div>
                       </div>
+                </div>
+
+                <div className="relative flex items-center justify-center min-h-[600px] lg:sticky lg:top-24">
+                  <div className="absolute inset-0 flex items-center justify-center opacity-30">
+                    {lottieData && (
+                      <div style={{ width: "100%", height: "100%", maxWidth: "500px", maxHeight: "500px" }}>
+                        {/* @ts-ignore */}
+                        <Lottie
+                          animationData={lottieData}
+                          loop={true}
+                          autoplay={true}
+                          style={{ width: "100%", height: "100%" }}
+                        />
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className="relative z-10 flex items-center justify-center">
+                    <img
+                      src="/storySetGif/UnderConstructionFondoTransparente.gif"
+                      alt="Under construction"
+                      className="max-w-full h-auto"
+                      style={{ maxWidth: "400px" }}
+                    />
+                  </div>
+                </div>
               </div>
             </motion.div>
           </motion.div>
