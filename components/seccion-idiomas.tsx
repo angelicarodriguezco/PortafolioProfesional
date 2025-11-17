@@ -39,8 +39,8 @@ export default function SeccionIdiomas() {
   }
 
   const idiomas = [
-    { nombre: "Español", nivel: traducir("languages.native") },
-    { nombre: "Inglés", nivel: traducir("languages.advanced") },
+    { nombreKey: "languages.spanish", nivelKey: "languages.native", codigo: "cr" },
+    { nombreKey: "languages.english", nivelKey: "languages.advanced", codigo: "us" },
   ]
 
   return (
@@ -53,14 +53,16 @@ export default function SeccionIdiomas() {
           animate={estaEnVista ? "visible" : "hidden"}
           className="space-y-8"
         >
-          <motion.div variants={itemVariants} className="text-center space-y-4">
+          <motion.div variants={itemVariants} className="text-center space-y-4 -mt-8">
             <h2 
-              className="text-4xl md:text-6xl font-bold tracking-tight"
+              className="text-4xl md:text-6xl font-bold tracking-tight break-words px-4"
               style={{ 
                 background: `linear-gradient(135deg, ${coloresVibrantes.morado}, ${coloresVibrantes.coral}, ${coloresVibrantes.naranja})`,
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
+                backgroundClip: 'text',
+                lineHeight: '1.2',
+                paddingBottom: '0.2em'
               }}
             >
               {traducir("languages.title")}
@@ -74,7 +76,7 @@ export default function SeccionIdiomas() {
             <div className="flex flex-wrap justify-center gap-6">
               {idiomas.map((idioma, index) => (
                 <motion.div
-                  key={idioma.nombre}
+                  key={idioma.codigo}
                   className="px-8 py-6 rounded-2xl border-2 transition-all duration-300 shadow-lg"
                   style={{ 
                     borderColor: coloresVibrantes.coral,
@@ -86,18 +88,27 @@ export default function SeccionIdiomas() {
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05, boxShadow: `0 10px 30px ${coloresVibrantes.coral}40` }}
                 >
-                  <h3 
-                    className="text-2xl font-bold mb-2 text-center"
-                    style={{ color: coloresVibrantes.morado }}
-                  >
-                    {idioma.nombre}
-                  </h3>
-                  <p 
-                    className="text-lg text-center"
-                    style={{ color: coloresVibrantes.coral }}
-                  >
-                    {idioma.nivel}
-                  </p>
+                  <div className="flex flex-col items-center gap-3">
+                    <span 
+                      className={`fi fi-${idioma.codigo}`}
+                      style={{ 
+                        fontSize: '4rem',
+                        filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
+                      }}
+                    />
+                    <h3 
+                      className="text-2xl font-bold text-center"
+                      style={{ color: coloresVibrantes.morado }}
+                    >
+                      {traducir(idioma.nombreKey)}
+                    </h3>
+                    <p 
+                      className="text-lg text-center"
+                      style={{ color: coloresVibrantes.coral }}
+                    >
+                      {traducir(idioma.nivelKey)}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>

@@ -39,6 +39,8 @@ export const translations = {
     languages: {
       title: "Idiomas",
       subtitle: "Lenguajes que domino para comunicarme efectivamente en entornos globales",
+      spanish: "Español",
+      english: "Inglés",
       native: "Nativo",
       advanced: "Avanzado",
       intermediate: "Intermedio",
@@ -149,6 +151,8 @@ export const translations = {
     languages: {
       title: "Languages",
       subtitle: "Languages I master to communicate effectively in global environments",
+      spanish: "Spanish",
+      english: "English",
       native: "Native",
       advanced: "Advanced",
       intermediate: "Intermediate",
