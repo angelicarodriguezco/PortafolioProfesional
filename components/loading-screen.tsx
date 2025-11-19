@@ -22,7 +22,6 @@ export default function LoadingScreen() {
             alt="Logo Portafolio" 
             className="w-20 h-20 mx-auto mb-4"
           />
-          <h1 className="text-2xl font-bold text-gray-800">Portfolio</h1>
         </motion.div>
 
         <motion.div
@@ -38,15 +37,6 @@ export default function LoadingScreen() {
             className="h-full w-1/3 bg-gradient-to-r from-purple-600 to-pink-500"
           />
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          className="mt-4 text-gray-600"
-        >
-          Crafting digital experiences...
-        </motion.p>
       </div>
     </motion.div>
   )

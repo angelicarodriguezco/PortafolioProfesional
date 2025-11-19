@@ -103,7 +103,7 @@ export default function SeccionIdiomas() {
                       {traducir(idioma.nombreKey)}
                     </h3>
                     <p 
-                      className="text-lg text-center"
+                      className="text-xl text-center"
                       style={{ color: coloresVibrantes.coral }}
                     >
                       {traducir(idioma.nivelKey)}

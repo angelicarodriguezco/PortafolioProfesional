@@ -148,7 +148,7 @@ export default function SeccionContacto() {
             <motion.div variants={itemVariants} className="space-y-8">
               <div className="space-y-6">
                 <h3 className="text-2xl font-bold" style={{ color: coloresVibrantes.morado }}>{traducir("contact.letsTalk")}</h3>
-                <p className="leading-relaxed" style={{ color: coloresVibrantes.morado }}>
+                <p className="text-xl leading-relaxed" style={{ color: coloresVibrantes.morado }}>
                   {traducir("contact.letsTalkDesc")}
                 </p>
               </div>
@@ -161,7 +161,7 @@ export default function SeccionContacto() {
                     placeholder={traducir("contact.name")}
                         value={datosFormulario.name}
                         onChange={manejarCambioInput}
-                    className="w-full px-4 py-3 rounded-lg transition-colors focus:outline-none focus:border-opacity-50"
+                    className="w-full px-4 py-3 text-xl rounded-lg transition-colors focus:outline-none focus:border-opacity-50"
                         style={{ 
                       backgroundColor: `${coloresVibrantes.morado}20`,
                       borderColor: coloresVibrantes.morado,
@@ -176,7 +176,7 @@ export default function SeccionContacto() {
                     placeholder={traducir("contact.email")}
                         value={datosFormulario.email}
                         onChange={manejarCambioInput}
-                    className="w-full px-4 py-3 rounded-lg transition-colors focus:outline-none focus:border-opacity-50"
+                    className="w-full px-4 py-3 text-xl rounded-lg transition-colors focus:outline-none focus:border-opacity-50"
                         style={{ 
                       backgroundColor: `${coloresVibrantes.morado}20`,
                       borderColor: coloresVibrantes.morado,
@@ -191,7 +191,7 @@ export default function SeccionContacto() {
                       value={datosFormulario.message}
                       onChange={manejarCambioInput}
                     rows={5}
-                    className="w-full px-4 py-3 rounded-lg transition-colors resize-none focus:outline-none focus:border-opacity-50"
+                    className="w-full px-4 py-3 text-xl rounded-lg transition-colors resize-none focus:outline-none focus:border-opacity-50"
                       style={{ 
                       backgroundColor: `${coloresVibrantes.morado}20`,
                       borderColor: coloresVibrantes.morado,
@@ -241,15 +241,15 @@ export default function SeccionContacto() {
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4 p-4 rounded-lg" style={{ backgroundColor: `${coloresVibrantes.morado}10` }}>
                     <Mail className="w-5 h-5" style={{ color: coloresVibrantes.coral }} />
-                    <span style={{ color: coloresVibrantes.morado }}>mariaangelica@rodriguezcoto.com</span>
+                    <span className="text-xl" style={{ color: coloresVibrantes.morado }}>mariaangelica@rodriguezcoto.com</span>
               </div>
                   <div className="flex items-center space-x-4 p-4 rounded-lg" style={{ backgroundColor: `${coloresVibrantes.morado}10` }}>
                     <MessageCircle className="w-5 h-5" style={{ color: coloresVibrantes.coral }} />
-                    <span style={{ color: coloresVibrantes.morado }}>+506 7058 9304</span>
+                    <span className="text-xl" style={{ color: coloresVibrantes.morado }}>+506 7058 9304</span>
                     </div>
                   <div className="flex items-center space-x-4 p-4 rounded-lg" style={{ backgroundColor: `${coloresVibrantes.morado}10` }}>
                     <MapPin className="w-5 h-5" style={{ color: coloresVibrantes.coral }} />
-                    <span style={{ color: coloresVibrantes.morado }}>Costa Rica</span>
+                    <span className="text-xl" style={{ color: coloresVibrantes.morado }}>Costa Rica</span>
                       </div>
                     </div>
               </div>
@@ -288,7 +288,7 @@ export default function SeccionContacto() {
                 alt="Logo" 
                 className="w-8 h-8"
               />
-              <p style={{ color: coloresVibrantes.morado }}>{traducir("contact.footer")}</p>
+              <p className="text-xl" style={{ color: coloresVibrantes.morado }}>{traducir("contact.footer")}</p>
             </div>
           </motion.div>
         </motion.div>

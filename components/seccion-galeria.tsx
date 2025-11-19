@@ -18,6 +18,7 @@ interface Project {
   technologies: string[]
   githubUrl: string
   featured: boolean
+  year: number
   media: {
     type: 'image' | 'video' | 'gif'
     src: string
@@ -54,6 +55,7 @@ export default function SeccionGaleria() {
       technologies: ["Node.js", "Express.js", "MongoDB", "HTML", "CSS", "JavaScript"],
       githubUrl: "https://github.com/ECF2001/Pokemon-Fight",
       featured: true,
+      year: 2024,
       media: [
         { type: 'image', src: '/GifsFotosPokemonFight/PaginaPrincipal.png', alt: 'Pokémon Fight - Página Principal' },
         { type: 'gif', src: '/GifsFotosPokemonFight/PaginaEstadisticas.gif', alt: 'Pokémon Fight - Página Estadísticas' },
@@ -83,6 +85,7 @@ export default function SeccionGaleria() {
       technologies: ["C#", "ASP.NET", "Entity Framework", "SQL Server", "HTML", "CSS", "JavaScript", "Cloudinary", "Yahoo Finance API", "PayPal API"],
       githubUrl: "https://github.com/angelicarodriguezco/Proyecto2Grupo3",
       featured: false,
+      year: 2025,
       media: [
         { type: 'image', src: '/GifsFotosWealthify/PaginaCompraVentaAcciones.gif', alt: 'Wealthify - Página Compra y Venta de Acciones' },
         { type: 'image', src: '/GifsFotosWealthify/PaginaDashboardFinanciero.gif', alt: 'Wealthify - Página Dashboard Financiero' },
@@ -112,6 +115,7 @@ export default function SeccionGaleria() {
       technologies: ["React", "Node.js", "MongoDB", "Jest", "Flickr API"],
       githubUrl: "https://github.com/angelicarodriguezco/FlickrFavorites",
       featured: true,
+      year: 2025,
       media: [
         { type: 'image', src: '/GifsFotosFlickrFavorites/PaginaFavoritos.png', alt: 'Flickr Favorites - Página Favoritos' },
         { type: 'image', src: '/GifsFotosFlickrFavorites/PaginaGaleria.gif', alt: 'Flickr Favorites - Página Galeria' },
@@ -135,6 +139,7 @@ export default function SeccionGaleria() {
       technologies: ["Java", "TypeScript", "React", "MySQL", "Spring Boot", "Node.js"],
       githubUrl: "https://github.com/angelicarodriguezco/MiRecetario",
       featured: false,
+      year: 2025,
       media: [
         { type: 'image', src: '/GifsFotosMiRecetario/PaginaCategoriasEtiquetas.gif', alt: 'MiRecetario - Página Categorias y Etiquetas' },
         { type: 'image', src: '/GifsFotosMiRecetario/PaginaListaCompras.png', alt: 'MiRecetario - Página Lista de Compras' },
@@ -267,7 +272,7 @@ export default function SeccionGaleria() {
                       <div className="flex items-center space-x-4 text-sm" style={{ color: coloresVibrantes.coral }}>
                         <span>{String(index + 1).padStart(2, '0')}</span>
                         <span>{project.category}</span>
-                        <span>2024</span>
+                        <span>{project.year}</span>
                       </div>
                       <h3 className="text-3xl md:text-4xl font-bold" style={{ color: coloresVibrantes.morado }}>
                         {project.title}
@@ -418,17 +423,17 @@ export default function SeccionGaleria() {
 
                     <div className="space-y-4">
                       <div>
-                        <h4 className="font-semibold mb-2">{traducir("gallery.description")}</h4>
-                        <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                        <h4 className="text-lg font-semibold mb-2">{traducir("gallery.description")}</h4>
+                        <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
                           {selectedProject.longDescription}
                         </p>
                       </div>
 
                       <div>
-                        <h4 className="font-semibold mb-2">{traducir("gallery.technologies")}</h4>
+                        <h4 className="text-lg font-semibold mb-2">{traducir("gallery.technologies")}</h4>
                         <div className="flex flex-wrap gap-2">
                           {selectedProject.technologies.map((tech, index) => (
-                            <Badge key={index} variant="secondary">
+                            <Badge key={index} variant="secondary" className="text-base">
                               {tech}
                             </Badge>
                           ))}
@@ -546,32 +551,32 @@ export default function SeccionGaleria() {
                       <h2 className="text-5xl font-bold text-[#000000] mb-4">
                         {selectedProjectShelby?.title}
                       </h2>
-                      <p className="text-base text-[#000000] leading-relaxed mb-4">
+                      <p className="text-lg text-[#000000] leading-relaxed mb-4">
                         {selectedProjectShelby?.description}
                       </p>
-                      <span className="text-sm text-[#000000]">
-                        2024
+                      <span className="text-base text-[#000000]">
+                        {selectedProjectShelby?.year}
                       </span>
                     </div>
 
                     <div className="space-y-6">
                       <div className="grid grid-cols-9 gap-4">
-                        <p className="text-sm font-semibold text-[#000000] uppercase col-span-3">{traducir("gallery.category").toUpperCase()}</p>
-                        <p className="text-sm text-[#000000] col-span-6">
+                        <p className="text-base font-semibold text-[#000000] uppercase col-span-3">{traducir("gallery.applicationTypeLabel").toUpperCase()}</p>
+                        <p className="text-lg text-[#000000] col-span-6">
                           {selectedProjectShelby?.category}
                         </p>
                       </div>
 
                       <div className="grid grid-cols-9 gap-4">
-                        <p className="text-sm font-semibold text-[#000000] uppercase col-span-3">{traducir("gallery.description").toUpperCase()}</p>
-                        <p className="text-base text-[#000000] col-span-6 leading-relaxed whitespace-pre-line">
+                        <p className="text-base font-semibold text-[#000000] uppercase col-span-3">{traducir("gallery.description").toUpperCase()}</p>
+                        <p className="text-lg text-[#000000] col-span-6 leading-relaxed whitespace-pre-line">
                           {selectedProjectShelby?.longDescription}
                         </p>
                       </div>
 
                       <div className="grid grid-cols-9 gap-4">
-                        <p className="text-sm font-semibold text-[#000000] uppercase col-span-3">{traducir("gallery.technologiesUsed")}</p>
-                        <p className="text-sm text-[#000000] col-span-6">
+                        <p className="text-base font-semibold text-[#000000] uppercase col-span-3">{traducir("gallery.technologiesUsed")}</p>
+                        <p className="text-lg text-[#000000] col-span-6">
                           {selectedProjectShelby?.technologies.join(', ')}
                         </p>
                       </div>
@@ -581,7 +586,7 @@ export default function SeccionGaleria() {
                           href={selectedProjectShelby?.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center text-sm font-semibold text-[#000000] hover:text-[#000000]/70 transition-colors uppercase gap-2"
+                          className="inline-flex items-center text-base font-semibold text-[#000000] hover:text-[#000000]/70 transition-colors uppercase gap-2"
                         >
                           <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 -3.93402e-07V9L7.2002 9V3.07324L1.27441 8.99805L0.00195313 7.72559L5.92676 1.7998L0 1.7998L0 0L9 -3.93402e-07Z" fill="#000000"></path>

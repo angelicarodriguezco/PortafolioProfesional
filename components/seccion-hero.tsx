@@ -313,7 +313,7 @@ export default function SeccionHero() {
               </motion.div>
 
               <motion.p
-                className="text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0"
+                className="text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0"
                 style={{ color: coloresVibrantes.morado }}
                 variants={variantesItem}
               >

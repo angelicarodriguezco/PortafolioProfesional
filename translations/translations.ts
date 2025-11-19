@@ -60,6 +60,7 @@ export const translations = {
       title: "Trabajos Seleccionados",
       subtitle: "Una muestra de proyectos que demuestran mi experiencia en desarrollo web, diseño UI/UX y resolución creativa de problemas",
       category: "Aplicación Web",
+      applicationTypeLabel: "Tipo de Aplicación",
       description: "Descripción",
       technologies: "Tecnologías",
       technologiesUsed: "TECNOLOGÍAS USADAS",
@@ -76,17 +77,17 @@ export const translations = {
         wealthify: {
           title: "Wealthify",
           description: "Plataforma de Inversión en Bolsa de Valores",
-          longDescription: "Wealthify es una plataforma web integral de inversión en bolsa de valores que conecta asesores financieros con inversionistas. La aplicación permite a los usuarios registrarse como asesores o clientes, gestionar portafolios de inversión, visualizar datos de mercado en tiempo real, realizar compras y ventas de acciones con PayPal, y generar reportes financieros detallados."
+          longDescription: "Wealthify es una plataforma web integral de inversión en bolsa de valores que conecta asesores financieros con inversionistas. \nLa aplicación permite a los usuarios registrarse como asesores o clientes, gestionar portafolios de inversión, visualizar datos de mercado en tiempo real, realizar compras y ventas de acciones con PayPal, y generar reportes financieros detallados."
         },
         flickr: {
           title: "Flickr Favorites",
           description: "Buscador y gestor de imágenes favoritas de Flickr",
-          longDescription: "FlickrFavorites es una aplicación web que permite a los usuarios buscar imágenes de Flickr, marcarlas como favoritas y gestionar su colección personal de imágenes favoritas. La aplicación incluye una galería de búsqueda de imágenes, y un panel de gestión de favoritos donde los usuarios pueden editar títulos de sus imágenes guardadas."
+          longDescription: "FlickrFavorites es una aplicación web que permite a los usuarios buscar imágenes de Flickr, marcarlas como favoritas y gestionar su colección personal de imágenes favoritas. \nLa aplicación incluye una galería de búsqueda de imágenes, y un panel de gestión de favoritos donde los usuarios pueden editar títulos de sus imágenes guardadas."
         },
         recetario: {
           title: "MiRecetario",
           description: "Gestor de recetas con planificación de menús y listas de compras",
-          longDescription: "MiRecetario es una aplicación diseñada para facilitar la gestión de recetas, la planificación de menús semanales y la organización de listas de compras. La idea principal del proyecto es ofrecer una plataforma donde los usuarios puedan crear, editar y clasificar sus recetas, asignarlas a un plan de comidas semanal y generar una lista de ingredientes por comprar para sus recetas."
+          longDescription: "MiRecetario es una aplicación diseñada para facilitar la gestión de recetas, la planificación de menús semanales y la organización de listas de compras. \nLa idea principal del proyecto es ofrecer una plataforma donde los usuarios puedan crear, editar y clasificar sus recetas, asignarlas a un plan de comidas semanal y generar una lista de ingredientes por comprar para sus recetas."
         }
       }
     },
@@ -172,6 +173,7 @@ export const translations = {
       title: "Selected Works",
       subtitle: "A sample of projects that demonstrate my experience in web development, UI/UX design and creative problem solving",
       category: "Web Application",
+      applicationTypeLabel: "Application Type",
       description: "Description",
       technologies: "Technologies",
       technologiesUsed: "TECHNOLOGIES USED",
@@ -188,17 +190,17 @@ export const translations = {
         wealthify: {
           title: "Wealthify",
           description: "Stock Market Investment Platform",
-          longDescription: "Wealthify is a comprehensive stock market investment web platform that connects financial advisors with investors. The application allows users to register as advisors or clients, manage investment portfolios, view real-time market data, buy and sell stocks with PayPal, and generate detailed financial reports."
+          longDescription: "Wealthify is a comprehensive stock market investment web platform that connects financial advisors with investors. \nThe application allows users to register as advisors or clients, manage investment portfolios, view real-time market data, buy and sell stocks with PayPal, and generate detailed financial reports."
         },
         flickr: {
           title: "Flickr Favorites",
           description: "Flickr favorite images search and manager",
-          longDescription: "FlickrFavorites is a web application that allows users to search for images from Flickr, mark them as favorites and manage their personal collection of favorite images. The application includes an image search gallery, and a favorites management panel where users can edit titles of their saved images."
+          longDescription: "FlickrFavorites is a web application that allows users to search for images from Flickr, mark them as favorites and manage their personal collection of favorite images. \nThe application includes an image search gallery, and a favorites management panel where users can edit titles of their saved images."
         },
         recetario: {
           title: "MiRecetario",
           description: "Recipe manager with menu planning and shopping lists",
-          longDescription: "MiRecetario is an application designed to facilitate recipe management, weekly menu planning and shopping list organization. The main idea of the project is to offer a platform where users can create, edit and classify their recipes, assign them to a weekly meal plan and generate a shopping list of ingredients for their recipes."
+          longDescription: "MiRecetario is an application designed to facilitate recipe management, weekly menu planning and shopping list organization. \nThe main idea of the project is to offer a platform where users can create, edit and classify their recipes, assign them to a weekly meal plan and generate a shopping list of ingredients for their recipes."
         }
       }
     },

@@ -93,13 +93,13 @@ export default function SeccionAcercaDe() {
             <motion.div variants={itemVariants} className="space-y-8">
               <div className="space-y-6">
                 <div className="space-y-4" style={{ color: coloresVibrantes.morado }}>
-                  <p className="text-lg leading-relaxed">
+                  <p className="text-xl leading-relaxed">
                     {traducir("about.paragraph1")}
                   </p>
-                  <p className="text-lg leading-relaxed">
+                  <p className="text-xl leading-relaxed">
                     {traducir("about.paragraph2")}
                   </p>
-                  <p className="text-lg leading-relaxed">
+                  <p className="text-xl leading-relaxed">
                     {traducir("about.paragraph3")}
                   </p>
                 </div>
@@ -295,7 +295,7 @@ export default function SeccionAcercaDe() {
                         <value.icon className="w-6 h-6" style={{ color: coloresVibrantes.morado }} />
                       </motion.div>
                       <h4 className="text-lg md:text-xl font-semibold" style={{ color: coloresVibrantes.morado }}>{traducir(value.titleKey)}</h4>
-                      <p className="text-lg leading-relaxed" style={{ color: coloresVibrantes.morado }}>{traducir(value.descKey)}</p>
+                      <p className="text-xl leading-relaxed" style={{ color: coloresVibrantes.morado }}>{traducir(value.descKey)}</p>
                     </div>
                   </Card>
                 </motion.div>
@@ -346,7 +346,7 @@ export default function SeccionAcercaDe() {
                       </div>
                       <h4 className="text-2xl font-bold" style={{ color: coloresVibrantes.morado }}>{traducir("about.missionTitle")}</h4>
                     </div>
-                    <p className="text-lg leading-relaxed" style={{ color: coloresVibrantes.morado }}>
+                    <p className="text-xl leading-relaxed" style={{ color: coloresVibrantes.morado }}>
                       {traducir("about.missionDesc")}
                     </p>
                   </div>
@@ -377,7 +377,7 @@ export default function SeccionAcercaDe() {
                         </div>
                         <h4 className="text-2xl font-bold" style={{ color: coloresVibrantes.morado }}>{traducir("about.visionTitleCard")}</h4>
                       </div>
-                      <p className="text-lg leading-relaxed" style={{ color: coloresVibrantes.morado }}>
+                      <p className="text-xl leading-relaxed" style={{ color: coloresVibrantes.morado }}>
                         {traducir("about.visionDesc")}
                       </p>
                   </div>
