@@ -43,8 +43,8 @@ export default function SeccionContacto() {
   }
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/angelicarodriguezco", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/angelicarodriguezco", label: "LinkedIn" }
+    { icon: Github, href: "https://github.com/angelicarodriguezco", label: "GitHub", color: coloresVibrantes.morado },
+    { icon: Linkedin, href: "https://linkedin.com/in/angelicarodriguezco", label: "LinkedIn", color: coloresVibrantes.coral }
   ]
 
   const containerVariants = {
@@ -265,14 +265,14 @@ export default function SeccionContacto() {
                       rel="noopener noreferrer"
                       className="p-3 rounded-lg transition-all duration-300"
                       style={{ 
-                        backgroundColor: `${coloresVibrantes.morado}20`,
-                        borderColor: coloresVibrantes.morado,
-                        border: `1px solid ${coloresVibrantes.morado}`
+                        backgroundColor: `${social.color}20`,
+                        borderColor: social.color,
+                        border: `1px solid ${social.color}`
                       }}
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <social.icon className="w-6 h-6" style={{ color: coloresVibrantes.coral }} />
+                      <social.icon className="w-6 h-6" style={{ color: social.color }} />
                     </motion.a>
                   ))}
                 </div>

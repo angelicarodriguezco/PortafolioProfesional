@@ -365,63 +365,51 @@ export default function SeccionHero() {
                 variants={variantesItem}
                 className="flex justify-center lg:justify-start gap-4 pt-4"
               >
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
+                <motion.a
+                  href="https://github.com/angelicarodriguezco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-lg transition-all duration-300"
+                  style={{ 
+                    backgroundColor: `${coloresVibrantes.morado}20`,
+                    borderColor: coloresVibrantes.morado,
+                    border: `1px solid ${coloresVibrantes.morado}`
+                  }}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <Button
-                    variant="ghost"
-                    size="lg"
-                    className="w-12 h-12 rounded-full transition-all duration-300"
-                    style={{ 
-                      background: `linear-gradient(135deg, ${coloresVibrantes.morado}20, ${coloresVibrantes.coral}20)`,
-                      color: coloresVibrantes.morado
-                    }}
-                    asChild
-                  >
-                    <a href="https://github.com/angelicarodriguezco" target="_blank" rel="noopener noreferrer">
-                    <Github className="w-6 h-6" />
-                    </a>
-                  </Button>
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: -5 }}
-                  whileTap={{ scale: 0.9 }}
+                  <Github className="w-6 h-6" style={{ color: coloresVibrantes.morado }} />
+                </motion.a>
+                <motion.a
+                  href="https://www.linkedin.com/in/maria-angelica-rodriguez-coto-209898385/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-lg transition-all duration-300"
+                  style={{ 
+                    backgroundColor: `${coloresVibrantes.coral}20`,
+                    borderColor: coloresVibrantes.coral,
+                    border: `1px solid ${coloresVibrantes.coral}`
+                  }}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <Button
-                    variant="ghost"
-                    size="lg"
-                    className="w-12 h-12 rounded-full transition-all duration-300"
-                    style={{ 
-                      background: `linear-gradient(135deg, ${coloresVibrantes.coral}20, ${coloresVibrantes.naranja}20)`,
-                      color: coloresVibrantes.coral
-                    }}
-                    asChild
-                  >
-                    <a href="https://www.linkedin.com/in/maria-angelica-rodriguez-coto-209898385/" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="w-6 h-6" />
-                    </a>
-                  </Button>
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
+                  <Linkedin className="w-6 h-6" style={{ color: coloresVibrantes.coral }} />
+                </motion.a>
+                <motion.a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=mariaangelica@rodriguezcoto.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-lg transition-all duration-300"
+                  style={{ 
+                    backgroundColor: `${coloresVibrantes.naranja}20`,
+                    borderColor: coloresVibrantes.naranja,
+                    border: `1px solid ${coloresVibrantes.naranja}`
+                  }}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <Button
-                    variant="ghost"
-                    size="lg"
-                    className="w-12 h-12 rounded-full transition-all duration-300"
-                    style={{ 
-                      background: `linear-gradient(135deg, ${coloresVibrantes.naranja}20, ${coloresVibrantes.morado}20)`,
-                      color: coloresVibrantes.naranja
-                    }}
-                    asChild
-                  >
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mariaangelica@rodriguezcoto.com" target="_blank" rel="noopener noreferrer">
-                    <Mail className="w-6 h-6" />
-                    </a>
-                  </Button>
-                </motion.div>
+                  <Mail className="w-6 h-6" style={{ color: coloresVibrantes.naranja }} />
+                </motion.a>
               </motion.div>
             </motion.div>
           </div>
